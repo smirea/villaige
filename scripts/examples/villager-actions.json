@@ -1,0 +1,57 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"oneOf": [
+		{
+			"description": "Rest to recover energy when tired",
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["action", "args"],
+			"properties": {
+				"action": { "const": "rest" },
+				"args": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["time"],
+					"properties": {
+						"time": { "type": "integer", "enum": [10, 30, 60], "description": "How many minutes to rest" }
+					}
+				}
+			}
+		},
+		{
+			"description": "Walk to another location to pursue a goal",
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["action", "args"],
+			"properties": {
+				"action": { "const": "walk" },
+				"args": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["to", "hurry"],
+					"properties": {
+						"to": { "type": "string", "enum": ["farm", "home", "tavern", "river_bank"] },
+						"hurry": { "type": "boolean", "description": "Whether to hurry to the destination" }
+					}
+				}
+			}
+		},
+		{
+			"description": "Eat or drink something at the tavern",
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["action", "args"],
+			"properties": {
+				"action": { "const": "consume" },
+				"args": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["item"],
+					"properties": {
+						"item": { "type": "string", "enum": ["burger", "beer", "fries"] }
+					}
+				}
+			}
+		}
+	]
+}

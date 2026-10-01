@@ -8,7 +8,30 @@ printf '%s' 'I need clay for a pot' | scripts/decide --labels collect_clay use_p
 scripts/decide 'Input context' --schema decisions.json
 ```
 
-Schemas map decision names to candidate labels or GLiNER task definitions:
+For tool calls, pass a JSON Schema with `oneOf` for the possible actions. Each action has its own argument shape. The model selects an action, then selects only that action's arguments. The output is validated against the supplied schema.
+
+The [three-action example](examples/villager-actions.json) defines:
+
+| Action    | Arguments                               |
+| --------- | --------------------------------------- |
+| `rest`    | `time`: integer, 10, 30, or 60          |
+| `walk`    | `to`: location string; `hurry`: boolean |
+| `consume` | `item`: burger, beer, or fries          |
+
+```sh
+scripts/decide 'I am exhausted. I want to rest for 30 minutes.' --schema scripts/examples/villager-actions.json
+# {"action": "rest", "args": {"time": 30}}
+
+scripts/decide 'I want to walk to the farm. I am late for work and must hurry.' --schema scripts/examples/villager-actions.json
+# {"action": "walk", "args": {"to": "farm", "hurry": true}}
+
+scripts/decide 'I am at the tavern and want to eat a burger.' --schema scripts/examples/villager-actions.json
+# {"action": "consume", "args": {"item": "burger"}}
+```
+
+Supported JSON Schema shapes: a root `oneOf` or object, nested objects, `const`, `enum` (including numeric values), and booleans. Objects must set `additionalProperties: false` and mark every property as required. Free-form strings/numbers, arrays, and nested unions are unsupported; give arguments explicit choices. Descriptions help the model choose. This returns a proposed tool call; your application executes it.
+
+The original classification format also works. These schemas map decision names to candidate labels or GLiNER task definitions:
 
 ```json
 {

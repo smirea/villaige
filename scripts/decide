@@ -1,7 +1,7 @@
 #!/usr/bin/env -S uv run --script
 # /// script
 # requires-python = ">=3.12,<3.13"
-# dependencies = ["gliner2==2.0.0", "torch==2.14.0", "transformers==4.57.6", "peft==0.21.0"]
+# dependencies = ["gliner2==2.0.0", "torch==2.14.0", "transformers==4.57.6", "peft==0.21.0", "jsonschema>=4.23,<5"]
 # ///
 
 import argparse
@@ -12,12 +12,65 @@ from contextlib import redirect_stdout
 from pathlib import Path
 
 
+def compile_shape(shape, path=()):
+    if any(keyword in shape for keyword in ("oneOf", "anyOf", "allOf", "$ref")):
+        raise ValueError(f"{'.'.join(path) or 'root'}: nested unions and references are unsupported")
+    if "const" in shape:
+        return lambda answers: shape["const"], {}
+    if "enum" in shape or shape.get("type") == "boolean":
+        values = shape.get("enum", [False, True])
+        if len(values) == 1:
+            return lambda answers: values[0], {}
+        key = ".".join(path) or "value"
+        labels = {json.dumps(value): json.dumps(value) for value in values}
+        description = shape.get("description")
+        if description:
+            labels = {label: f"{description}: {label}" for label in labels}
+        return lambda answers: json.loads(answers[key]["label"]), {key: {"labels": labels}}
+    if shape.get("type") == "object":
+        if shape.get("additionalProperties") is not False:
+            raise ValueError(f"{'.'.join(path) or 'root'}: set additionalProperties to false")
+        properties = shape.get("properties", {})
+        required = set(shape.get("required", []))
+        if required != set(properties):
+            raise ValueError(f"{'.'.join(path) or 'root'}: all properties must be required")
+        fields = {}
+        tasks = {}
+        for name, field in properties.items():
+            if "." in name:
+                raise ValueError("property names cannot contain dots")
+            build, heads = compile_shape(field, (*path, name))
+            fields[name] = build
+            tasks.update(heads)
+        return lambda answers: {name: build(answers) for name, build in fields.items()}, tasks
+    raise ValueError(f"{'.'.join(path) or 'root'}: use enum, const, boolean, or a closed object; free-form values cannot be generated")
+
+
+def compile_json_schema(schema):
+    from jsonschema import Draft202012Validator
+
+    Draft202012Validator.check_schema(schema)
+    variants = schema.get("oneOf", [schema])
+    if not variants:
+        raise ValueError("oneOf must contain at least one shape")
+    compiled = [compile_shape(variant) for variant in variants]
+    labels = {}
+    for index, variant in enumerate(variants):
+        action = variant.get("properties", {}).get("action", {}).get("const")
+        labels[str(index)] = " ".join(str(value) for value in (
+            action, variant.get("title"), variant.get("description"),
+        ) if value) or json.dumps(variant)
+    return compiled, labels, Draft202012Validator(schema)
+
+
 def main():
+    from jsonschema.exceptions import SchemaError, ValidationError
+
     parser = argparse.ArgumentParser(description="Classify decisions locally with GLiNER2.5-Decide.")
     parser.add_argument("text", nargs="?", help="Input text; omit to read stdin")
     schema_args = parser.add_mutually_exclusive_group()
     schema_args.add_argument("--labels", nargs="+", help="Candidate labels for one decision")
-    schema_args.add_argument("--schema", type=Path, help="JSON file mapping decision names to label lists or task definitions")
+    schema_args.add_argument("--schema", type=Path, help="JSON Schema for structured output, or a GLiNER classification schema")
     parser.add_argument("--task", default="action")
     parser.add_argument("--jsonl", action="store_true", help='Keep the model loaded; read {"text": ..., "schema": ...} per line')
     parser.add_argument("--model", default=os.environ.get("GLINER_MODEL", "fastino/GLiNER2.5-Decide"), help="Model directory or Hugging Face ID (also GLINER_MODEL)")
@@ -33,6 +86,8 @@ def main():
             raise ValueError("text must be a nonempty string")
         if not isinstance(schema, dict) or not schema:
             raise ValueError("schema must be a nonempty object")
+        if "oneOf" in schema or schema.get("type") == "object":
+            return compile_json_schema(schema)
         for name, task in schema.items():
             labels = task.get("labels") if isinstance(task, dict) else task
             if not name or not isinstance(labels, (list, dict)) or not labels:
@@ -57,9 +112,17 @@ def main():
         model = AutoExtractor.from_pretrained(args.model, map_location=device).eval()
 
     def decide(text, schema):
-        validate(text, schema)
+        structured = validate(text, schema)
         with redirect_stdout(sys.stderr), torch.inference_mode():
-            result = model.classify_text(text, schema, include_confidence=True)
+            if structured:
+                compiled, labels, validator = structured
+                index = int(model.classify_text(text, {"action": {"labels": labels}})["action"]) if len(compiled) > 1 else 0
+                build, tasks = compiled[index]
+                answers = model.classify_text(text, tasks, include_confidence=True) if tasks else {}
+                result = build(answers)
+                validator.validate(result)
+            else:
+                result = model.classify_text(text, schema, include_confidence=True)
         print(json.dumps(result), flush=True)
 
     if args.jsonl:
@@ -67,15 +130,17 @@ def main():
             try:
                 request = json.loads(line)
                 decide(request["text"], request.get("schema", schema))
-            except (ValueError, KeyError, TypeError) as error:
+            except (ValueError, KeyError, TypeError, SchemaError, ValidationError) as error:
                 print(json.dumps({"error": str(error)}), flush=True)
     else:
         decide(text, schema)
 
 
 if __name__ == "__main__":
+    from jsonschema.exceptions import SchemaError, ValidationError
+
     try:
         main()
-    except (ValueError, OSError) as error:
+    except (ValueError, OSError, SchemaError, ValidationError) as error:
         print(f"decide: {error}", file=sys.stderr)
         sys.exit(1)
