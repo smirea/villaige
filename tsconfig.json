@@ -1,6 +1,7 @@
 {
 	// pulled from bun init
 	"compilerOptions": {
+		"types": ["bun"],
 		"lib": ["ESNext", "DOM"],
 		"target": "ESNext",
 		"module": "Preserve",
