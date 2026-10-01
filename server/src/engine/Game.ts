@@ -1,13 +1,12 @@
-import type { Action, Villager } from 'server/types';
+import type { Action, Cost, Villager } from 'server/types';
 import getActions from './getActions';
 import textBlock from 'shared/textBlock';
 import { formatTime } from './utils';
 import { stringify } from 'javascript-stringify';
 import z from 'zod';
-import { Output, stepCountIs, streamText, type Tool } from 'ai';
+import { Output, stepCountIs, streamText } from 'ai';
 import chalk from 'chalk';
-import util from 'util';
-import _ from 'lodash';
+import * as _ from 'es-toolkit/compat';
 import { google, type GoogleLanguageModelOptions } from '@ai-sdk/google';
 
 interface Conversation {
@@ -73,8 +72,7 @@ export default class Game {
 			console.log(chalk.bold(`actions (${msg.actions.length}):`), msg.actions.map(x => x.name).join(', '));
 			const { args, action } = await this.invokeAi(msg);
 			const a = msg.actions.find(x => x.name === action)!;
-			// const finalCost = typeof a.cost === 'function' ? a.cost(args) : a.cost;
-			const finalCost = a.cost;
+			const finalCost = compileCost(a, args as any);
 			villager.statusMessage = await a.run(args || ({} as any));
 			villager.actionHistory.push({ time: this.data.time, action: a.name, args: args || undefined });
 			for (const [_k, v] of Object.entries(finalCost)) {
@@ -196,9 +194,10 @@ export default class Game {
 
 		for (const action of allActions) {
 			const issues: string[] = [];
+			const finalCost = compileCost(action);
 
-			for (const [_k, v] of Object.entries(action.cost)) {
-				const k = _k as keyof typeof action.cost;
+			for (const [_k, v] of Object.entries(finalCost)) {
+				const k = _k as keyof typeof finalCost;
 				if (k === 'time') continue;
 				if (k === 'inventory') {
 					for (const [item, count] of Object.entries(v)) {
@@ -261,4 +260,13 @@ export default class Game {
 			],
 		};
 	}
+}
+
+function compileCost<Args extends Record<string, any>>(action: Action<Args>, args?: Args): Cost {
+	if (action.cost.type === 'constant') {
+		const { type: _, ...rest } = action.cost;
+		return rest;
+	}
+
+	return action.cost.fn(z.object(action.args).parse(args || action.cost.baseArgs));
 }

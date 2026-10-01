@@ -19,7 +19,7 @@ export interface Villager {
 	inventory: Record<string, number>;
 }
 
-type Cost = { time: number; inventory?: Record<string, number> } & Partial<Villager['stats']>;
+export type Cost = { time: number; inventory?: Record<string, number> } & Partial<Villager['stats']>;
 
 export type Action<
 	Shape extends Record<string, z.ZodType>,
@@ -28,6 +28,6 @@ export type Action<
 	name: string;
 	description?: string;
 	args: Shape;
-	cost: Cost;
+	cost: ({ type: 'constant' } & Cost) | { type: 'dynamic'; baseArgs: z.input<Args>; fn: (a: z.output<Args>) => Cost };
 	run: (a: z.output<Args>) => string | Promise<string>;
 };

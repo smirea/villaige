@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import * as _ from 'es-toolkit';
 import Game from './engine/Game';
 
 const game = new Game();
