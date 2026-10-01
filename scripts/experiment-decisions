@@ -1,0 +1,293 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12,<3.13"
+# dependencies = ["gliner2==2.0.0", "torch==2.14.0", "transformers==4.57.6", "peft==0.21.0"]
+# ///
+
+import argparse
+import copy
+import importlib.metadata
+import json
+import math
+import os
+import random
+import statistics
+import sys
+import time
+from collections import deque
+from contextlib import redirect_stdout
+from functools import lru_cache
+from pathlib import Path
+
+LOCATIONS = {"farm": (-10, 10), "square": (0, 0), "home": (10, 5), "tavern": (2, 2), "river_bank": (0, -10)}
+WORLD = {
+    "farm": "Working earns 40 copper and costs 50 energy and 240 minutes.",
+    "river_bank": "Collecting clay adds 10 clay and costs 10 energy and 20 minutes.",
+    "square": "Making one clay pot requires and consumes 15 clay and 20 energy, and takes 60 minutes.",
+    "home": "Marie lives here. Bringing her a pot means being here with a clay pot.",
+    "tavern": "Burger restores 10 energy; beer restores 5; fries restore 3. Each costs 1 energy and 10 minutes, as in the current game.",
+    "rest": "Rest anywhere for 30 or 60 minutes to recover energy. Walking costs energy equal to the distance rounded up.",
+}
+GOALS = {
+    "pot": {"text": "Bring Marie a clay pot at home.", "target": {"location": "home", "pot": 1}},
+    "clay": {"text": "Get at least 20 clay for tomorrow's pottery.", "target": {"clay": 20}},
+    "wage": {"text": "Earn enough money to have at least 160 copper.", "target": {"money": 160}},
+    "home": {"text": "Return home to Marie.", "target": {"location": "home"}},
+}
+MODES = ["json", "prose", "history", "facts", "outcomes", "lookahead", "question", "goal_router", "goal_only", "planner"]
+
+
+def complete(state, goal):
+    return all(state[key] == value if key == "location" else state[key] >= value for key, value in GOALS[goal]["target"].items())
+
+
+def rest_energy(energy, minutes):
+    def exponential(coefficient, value):
+        return max(0, min(1, (math.exp(coefficient * value) - 1) / (math.exp(coefficient) - 1)))
+    return min(100, max(5, energy + math.floor(100 * exponential(-2.5, minutes / 60) * exponential(1.2, (100 - energy) / 100))))
+
+
+def actions(state):
+    result = []
+    def add(name, args, description, **effects):
+        result.append({"id": name + (":" + json.dumps(args, sort_keys=True) if args else ""), "action": name, "args": args, "description": description, "effects": effects})
+    add("think", {}, "Reflect for five minutes; costs 2 energy and changes no inventory or money.", energy=-2, minutes=5)
+    for minutes in (30, 60):
+        add("rest", {"time": minutes}, f"Rest for {minutes} minutes to recover energy.", energy=rest_energy(state["energy"], minutes) - state["energy"], minutes=minutes)
+    for location, coordinates in LOCATIONS.items():
+        if location != state["location"]:
+            distance = math.ceil(math.dist(LOCATIONS[state["location"]], coordinates))
+            add("walk_to_" + location, {}, f"Walk to {location}. Costs {distance} energy and {distance} minutes.", energy=-distance, location=location, minutes=distance)
+    if state["location"] == "farm":
+        add("work", {}, "Work at the farm to earn 40 copper; costs 50 energy and 240 minutes.", money=40, energy=-50, minutes=240)
+    elif state["location"] == "river_bank":
+        add("collect_clay", {}, "Collect 10 clay from the river bank; costs 10 energy and 20 minutes.", clay=10, energy=-10, minutes=20)
+    elif state["location"] == "square" and state["clay"] >= 15:
+        add("use_potter_wheel", {}, "Consume 15 clay to make one clay pot; costs 20 energy and 60 minutes.", clay=-15, pot=1, energy=-20, minutes=60)
+    elif state["location"] == "tavern":
+        add("see_menu", {}, "Read the menu; costs 1 energy and 1 minute.", energy=-1, minutes=1)
+        for item, energy in {"burger": 10, "beer": 5, "fries": 3}.items():
+            add("consume", {"item": item}, f"Consume {item}; gain {energy} energy before the 1-energy cost, takes 10 minutes.", energy=min(100, state["energy"] + energy) - state["energy"] - 1, minutes=10)
+    return [action for action in result if state["energy"] >= max(1 if action["action"] == "consume" else 0, -action["effects"].get("energy", 0))]
+
+
+def apply(state, action):
+    result = copy.deepcopy(state)
+    for key, value in action["effects"].items():
+        if key == "location":
+            result[key] = value
+        elif key == "minutes":
+            result["time"] += value
+        else:
+            result[key] += value
+    result["history"].append(f"{state['time'] // 60:02}:{state['time'] % 60:02} {action['id']}")
+    return result
+
+
+def state_key(state, goal):
+    target = GOALS[goal]["target"]
+    return (state["location"], state["energy"], min(state["clay"], 20) if goal in ("pot", "clay") else 0,
+            min(state["pot"], 1) if goal == "pot" else 0, min(state["money"], target.get("money", 0)))
+
+
+@lru_cache(maxsize=100000)
+def distance(key, goal):
+    start = dict(zip(("location", "energy", "clay", "pot", "money"), key), time=0, history=[])
+    queue = deque([(start, 0)])
+    seen = {key}
+    while queue:
+        state, depth = queue.popleft()
+        if complete(state, goal):
+            return depth
+        if depth >= 10:
+            continue
+        for action in actions(state):
+            if action["action"] in ("think", "see_menu"):
+                continue
+            following = apply(state, action)
+            next_key = state_key(following, goal)
+            if next_key not in seen:
+                seen.add(next_key)
+                queue.append((dict(zip(("location", "energy", "clay", "pot", "money"), next_key), time=0, history=[]), depth + 1))
+    return 99
+
+
+def choices(state, goal):
+    available = actions(state)
+    current_distance = distance(state_key(state, goal), goal)
+    remaining = {action["id"]: distance(state_key(apply(state, action), goal), goal) for action in available}
+    return available, {key for key, value in remaining.items() if value < current_distance}, remaining
+
+
+def context(state, goal, mode):
+    goal_text = state.get("goal_text", GOALS[goal]["text"])
+    full = {
+        "villager": {"name": state["name"], "personality": "A diligent farmer who keeps promises to Marie.", "memory": "Married to Marie; works for John; enjoys the tavern."},
+        "current_goal": goal_text,
+        "state": {"location": state["location"], "energy": state["energy"], "health": 80, "money": state["money"], "inventory": {"clay": state["clay"], "clay_pot": state["pot"]}, "time": f"{state['time'] // 60:02}:{state['time'] % 60:02}"},
+        "world": WORLD,
+    }
+    if mode == "json":
+        return json.dumps(full)
+    inventory = f"{state['clay']} clay and {state['pot']} clay pots"
+    prose = (f"Choose the next action that makes progress toward the current goal.\n"
+             f"Current goal: {goal_text}\n"
+             f"I am {state['name']}, a diligent farmer married to Marie. I work for John and enjoy the tavern.\n"
+             f"Current state: at {state['location']}; energy {state['energy']}/100; health 80/100; money {state['money']} copper; inventory {inventory}; time {full['state']['time']}.\n"
+             + "\n".join(f"{place}: {fact}" for place, fact in WORLD.items()))
+    if mode not in ("prose",):
+        prose += "\nToday's recent actions: " + "; ".join(state["history"][-4:])
+    if mode in ("facts", "outcomes", "lookahead"):
+        prose += (f"\nCurrent unmet facts: missing {max(0, 15 - state['clay'])} clay to craft a pot; "
+                  f"missing {max(0, 20 - state['clay'])} clay to reach 20 clay; "
+                  f"missing {max(0, 160 - state['money'])} copper to reach 160; "
+                  f"a finished pot {'is' if state['pot'] else 'is not'} in inventory.\nCurrent goal: {goal_text}")
+    return prose
+
+
+def corpus(split):
+    snapshots = [
+        ("home", 100, 0, 0, 120), ("river_bank", 70, 0, 0, 120),
+        ("river_bank", 55, 10, 0, 120), ("square", 65, 20, 0, 120),
+        ("square", 65, 5, 1, 120), ("farm", 75, 0, 0, 120),
+        ("home", 5, 0, 0, 120), ("tavern", 35, 0, 0, 120),
+    ] if split == "development" else [
+        ("home", 92, 10, 0, 120), ("river_bank", 64, 0, 0, 80),
+        ("river_bank", 46, 10, 0, 120), ("square", 39, 20, 0, 80),
+        ("farm", 38, 15, 1, 120), ("farm", 90, 10, 0, 80),
+        ("square", 8, 0, 0, 120), ("tavern", 43, 15, 0, 80),
+    ]
+    rows = []
+    for index, values in enumerate(snapshots):
+        state = dict(zip(("location", "energy", "clay", "pot", "money"), values), name="Bob" if split == "development" else "Eli", time=600 + index * 20,
+                     history=["09:00 woke up", "09:10 walked to the tavern", "09:25 consumed beer", f"09:45 arrived at {values[0]}"])
+        for goal in GOALS:
+            if not complete(state, goal):
+                rows.append({"id": f"{split}-{index}-{goal}", "state": state, "goal": goal})
+    return rows
+
+
+class Brain:
+    def __init__(self, model):
+        self.model = model
+
+    def decide(self, state, goal, mode, seed):
+        available, expected, remaining = choices(state, goal)
+        if mode == "planner":
+            selected = min(available, key=lambda action: (remaining[action["id"]], action["effects"].get("minutes", 0)))
+            return selected, expected, {"confidence": None, "ms": 0}
+        if mode in ("goal_router", "goal_only"):
+            start = time.perf_counter()
+            goal_labels = list((key, value["text"]) for key, value in GOALS.items())
+            random.Random(seed).shuffle(goal_labels)
+            goal_context = state.get("goal_text", GOALS[goal]["text"]) if mode == "goal_only" else context(state, goal, mode)
+            with redirect_stdout(sys.stderr):
+                routed = self.model.classify_text(goal_context, {"What is the villager's current goal?": {"labels": dict(goal_labels)}}, include_confidence=True)["What is the villager's current goal?"]
+            inferred_goal = routed["label"]
+            scores = {action["id"]: distance(state_key(apply(state, action), inferred_goal), inferred_goal) for action in available}
+            selected = min(available, key=lambda action: (scores[action["id"]], action["effects"].get("minutes", 0)))
+            return selected, expected, {"confidence": routed["confidence"], "inferred_goal": inferred_goal, "ms": (time.perf_counter() - start) * 1000}
+        labels = {}
+        for action in available:
+            description = action["description"]
+            if mode == "outcomes":
+                after = apply(state, action)
+                description += " Afterward: " + json.dumps({key: after[key] for key in ("location", "energy", "clay", "pot", "money")})
+            elif mode == "lookahead":
+                description += f" Shortest legal plan after this action: {remaining[action['id']]} more actions to complete the goal."
+            labels[action["id"]] = description
+        items = list(labels.items())
+        random.Random(seed).shuffle(items)
+        start = time.perf_counter()
+        question = "Which available action best advances the villager's current goal from the current state?" if mode == "question" else "next_action"
+        with redirect_stdout(sys.stderr):
+            result = self.model.classify_text(context(state, goal, mode), {question: {"labels": dict(items)}}, include_confidence=True)[question]
+        ms = (time.perf_counter() - start) * 1000
+        return next(action for action in available if action["id"] == result["label"]), expected, {"confidence": result["confidence"], "ms": ms}
+
+
+def summarize(records):
+    result = {}
+    for mode in MODES:
+        rows = [row for row in records if row["mode"] == mode]
+        if not rows:
+            continue
+        groups = {}
+        for row in rows:
+            groups.setdefault(row["case"], []).append(row["action"])
+        result[mode] = {
+            "decisions": len(rows), "progress_rate": sum(row["progress"] for row in rows) / len(rows),
+            "order_stability": sum(len(set(group)) == 1 for group in groups.values()) / len(groups),
+            "median_ms": statistics.median(row["ms"] for row in rows),
+            "by_goal": {goal: sum(row["progress"] for row in rows if row["goal"] == goal) / sum(row["goal"] == goal for row in rows) for goal in GOALS},
+        }
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Compare local GLiNER villager decision strategies.")
+    parser.add_argument("--model", default=os.environ.get("GLINER_MODEL", "fastino/GLiNER2.5-Decide"))
+    parser.add_argument("--device", default="mps")
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "experiments" / "gliner-villager")
+    parser.add_argument("--orders", type=int, default=3)
+    parser.add_argument("--split", choices=["development", "validation", "all"], default="all")
+    parser.add_argument("--modes", nargs="+", choices=MODES, default=MODES)
+    parser.add_argument("--audit-only", action="store_true", help="Only test the sixteen goal paraphrases")
+    args = parser.parse_args()
+    os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+    with redirect_stdout(sys.stderr):
+        import torch
+        from gliner2 import AutoExtractor
+        torch.set_num_threads(4)
+        model = AutoExtractor.from_pretrained(args.model, map_location=args.device).eval()
+    brain = Brain(model)
+    args.output.mkdir(parents=True, exist_ok=True)
+    report = {"device": args.device, "versions": {name: importlib.metadata.version(name) for name in ("gliner2", "torch", "transformers")}, "splits": {}, "episodes": [], "goal_audit": []}
+    splits = () if args.audit_only else (("development", "validation") if args.split == "all" else (args.split,))
+    with torch.inference_mode(), (args.output / "predictions.jsonl").open("w") as output:
+        for split in splits:
+            records = []
+            for mode in args.modes:
+                for row in corpus(split):
+                    for order in range(args.orders):
+                        action, expected, metrics = brain.decide(row["state"], row["goal"], mode, order)
+                        record = {"case": row["id"], "split": split, "mode": mode, "order": order, "goal": row["goal"], "state": row["state"], "action": action["id"], "expected": sorted(expected), "progress": action["id"] in expected, **metrics}
+                        records.append(record)
+                        output.write(json.dumps(record) + "\n")
+                        output.flush()
+                print(json.dumps({"split": split, "mode": mode, "summary": summarize(records)[mode]}), flush=True)
+            report["splits"][split] = summarize(records)
+        for mode in ([] if args.audit_only else args.modes):
+            for row in [row for row in corpus("validation") if row["id"] in ("validation-0-pot", "validation-1-pot", "validation-6-pot", "validation-5-wage", "validation-7-clay", "validation-4-home")]:
+                state = copy.deepcopy(row["state"])
+                trace = []
+                for step in range(16):
+                    if complete(state, row["goal"]):
+                        break
+                    action, expected, metrics = brain.decide(state, row["goal"], mode, step % 3)
+                    trace.append({"action": action["id"], "progress": action["id"] in expected, "state": {key: state[key] for key in ("location", "energy", "clay", "pot", "money")}, **metrics})
+                    state = apply(state, action)
+                report["episodes"].append({"case": row["id"], "goal": row["goal"], "mode": mode, "complete": complete(state, row["goal"]), "steps": len(trace), "minutes": state["time"] - row["state"]["time"], "trace": trace})
+            episodes = [episode for episode in report["episodes"] if episode["mode"] == mode]
+            print(json.dumps({"mode": mode, "episodes_completed": sum(episode["complete"] for episode in episodes), "episodes": len(episodes)}), flush=True)
+        if any(mode in args.modes for mode in ("goal_router", "goal_only")):
+            phrases = {
+                "pot": ["Marie broke her old clay pot. I promised to bring her a replacement at our house.", "My wife needs a new pot for cooking. I need to take one home to her.", "The pottery is for Marie; I haven't brought it back to our house yet.", "John paid me already. The remaining promise today is a clay pot for Marie at home."],
+                "clay": ["Tomorrow's pottery needs 20 clay. Stock up on the raw material today.", "I need to have at least twenty pieces of clay in my bag.", "Don't turn the clay into pots yet. Save 20 clay for tomorrow.", "Today's job is gathering enough river clay to reach a stock of 20."],
+                "wage": ["I owe 160 copper in rent and need enough in my wallet to pay it.", "Build my savings to at least 160 copper by earning wages.", "My only unfinished chore is getting my cash balance up to 160 copper.", "Skip pottery today. I must have 160 copper to cover a bill."],
+                "home": ["My chores are done. Marie is waiting for me at our house.", "I am finished for today and need to get back to where I live.", "No more pottery or work. Return to my house.", "Marie asked me to come back home immediately."],
+            }
+            for mode in (mode for mode in args.modes if mode in ("goal_router", "goal_only")):
+                for goal, texts in phrases.items():
+                    for text in texts:
+                        for order in range(args.orders):
+                            state = copy.deepcopy(next(row["state"] for row in corpus("validation") if row["id"] == "validation-1-pot"))
+                            state["goal_text"] = text
+                            action, expected, metrics = brain.decide(state, goal, mode, order)
+                            report["goal_audit"].append({"mode": mode, "text": text, "order": order, "expected_goal": goal, "correct_goal": metrics["inferred_goal"] == goal, "action": action["id"], "progress": action["id"] in expected, **metrics})
+            print(json.dumps({"goal_paraphrases_correct": sum(row["correct_goal"] for row in report["goal_audit"]), "total": len(report["goal_audit"])}), flush=True)
+        (args.output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
+
+
+if __name__ == "__main__":
+    main()

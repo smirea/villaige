@@ -1,0 +1,6746 @@
+{
+	"device": "mps",
+	"versions": {
+		"gliner2": "2.0.0",
+		"torch": "2.14.0",
+		"transformers": "4.57.6"
+	},
+	"splits": {
+		"development": {
+			"json": {
+				"decisions": 87,
+				"progress_rate": 0.4827586206896552,
+				"order_stability": 0.6896551724137931,
+				"median_ms": 144.43699999537785,
+				"by_goal": {
+					"pot": 0.5416666666666666,
+					"clay": 0.47619047619047616,
+					"wage": 0.25,
+					"home": 0.7222222222222222
+				}
+			},
+			"prose": {
+				"decisions": 87,
+				"progress_rate": 0.40229885057471265,
+				"order_stability": 0.7931034482758621,
+				"median_ms": 108.4729169961065,
+				"by_goal": {
+					"pot": 0.5416666666666666,
+					"clay": 0.5238095238095238,
+					"wage": 0.25,
+					"home": 0.2777777777777778
+				}
+			},
+			"history": {
+				"decisions": 87,
+				"progress_rate": 0.41379310344827586,
+				"order_stability": 0.8620689655172413,
+				"median_ms": 121.55658399569802,
+				"by_goal": {
+					"pot": 0.5416666666666666,
+					"clay": 0.5714285714285714,
+					"wage": 0.25,
+					"home": 0.2777777777777778
+				}
+			},
+			"facts": {
+				"decisions": 87,
+				"progress_rate": 0.42528735632183906,
+				"order_stability": 0.7931034482758621,
+				"median_ms": 145.21020799293183,
+				"by_goal": {
+					"pot": 0.625,
+					"clay": 0.5238095238095238,
+					"wage": 0.25,
+					"home": 0.2777777777777778
+				}
+			},
+			"outcomes": {
+				"decisions": 87,
+				"progress_rate": 0.41379310344827586,
+				"order_stability": 0.8275862068965517,
+				"median_ms": 313.39354200463276,
+				"by_goal": {
+					"pot": 0.625,
+					"clay": 0.42857142857142855,
+					"wage": 0.2916666666666667,
+					"home": 0.2777777777777778
+				}
+			},
+			"lookahead": {
+				"decisions": 87,
+				"progress_rate": 0.39080459770114945,
+				"order_stability": 0.6551724137931034,
+				"median_ms": 205.63354199111927,
+				"by_goal": {
+					"pot": 0.5416666666666666,
+					"clay": 0.42857142857142855,
+					"wage": 0.25,
+					"home": 0.3333333333333333
+				}
+			},
+			"planner": {
+				"decisions": 87,
+				"progress_rate": 1.0,
+				"order_stability": 1.0,
+				"median_ms": 0,
+				"by_goal": {
+					"pot": 1.0,
+					"clay": 1.0,
+					"wage": 1.0,
+					"home": 1.0
+				}
+			}
+		},
+		"validation": {
+			"json": {
+				"decisions": 90,
+				"progress_rate": 0.4444444444444444,
+				"order_stability": 0.6666666666666666,
+				"median_ms": 145.40481249423465,
+				"by_goal": {
+					"pot": 0.5416666666666666,
+					"clay": 0.3333333333333333,
+					"wage": 0.25,
+					"home": 0.6666666666666666
+				}
+			},
+			"prose": {
+				"decisions": 90,
+				"progress_rate": 0.28888888888888886,
+				"order_stability": 0.8,
+				"median_ms": 111.5136250082287,
+				"by_goal": {
+					"pot": 0.4166666666666667,
+					"clay": 0.2857142857142857,
+					"wage": 0.20833333333333334,
+					"home": 0.23809523809523808
+				}
+			},
+			"history": {
+				"decisions": 90,
+				"progress_rate": 0.3,
+				"order_stability": 0.8333333333333334,
+				"median_ms": 126.44249999721069,
+				"by_goal": {
+					"pot": 0.4583333333333333,
+					"clay": 0.2857142857142857,
+					"wage": 0.20833333333333334,
+					"home": 0.23809523809523808
+				}
+			},
+			"facts": {
+				"decisions": 90,
+				"progress_rate": 0.28888888888888886,
+				"order_stability": 0.7666666666666667,
+				"median_ms": 149.33733350335388,
+				"by_goal": {
+					"pot": 0.4583333333333333,
+					"clay": 0.2857142857142857,
+					"wage": 0.16666666666666666,
+					"home": 0.23809523809523808
+				}
+			},
+			"outcomes": {
+				"decisions": 90,
+				"progress_rate": 0.3,
+				"order_stability": 0.9,
+				"median_ms": 333.3537080034148,
+				"by_goal": {
+					"pot": 0.5,
+					"clay": 0.2857142857142857,
+					"wage": 0.125,
+					"home": 0.2857142857142857
+				}
+			},
+			"lookahead": {
+				"decisions": 90,
+				"progress_rate": 0.28888888888888886,
+				"order_stability": 0.6666666666666666,
+				"median_ms": 267.1119579972583,
+				"by_goal": {
+					"pot": 0.4166666666666667,
+					"clay": 0.2857142857142857,
+					"wage": 0.16666666666666666,
+					"home": 0.2857142857142857
+				}
+			},
+			"planner": {
+				"decisions": 90,
+				"progress_rate": 1.0,
+				"order_stability": 1.0,
+				"median_ms": 0.0,
+				"by_goal": {
+					"pot": 1.0,
+					"clay": 1.0,
+					"wage": 1.0,
+					"home": 1.0
+				}
+			}
+		}
+	},
+	"episodes": [
+		{
+			"case": "validation-0-pot",
+			"goal": "pot",
+			"mode": "json",
+			"complete": false,
+			"steps": 16,
+			"minutes": 209,
+			"trace": [
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.33295902609825134,
+					"ms": 229.94379200099502
+				},
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 96,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3805363178253174,
+					"ms": 196.0560000006808
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 87,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.286394327878952,
+					"ms": 264.6939999976894
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 96,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.371156245470047,
+					"ms": 269.7959999932209
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.32118386030197144,
+					"ms": 334.6871249959804
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2861962914466858,
+					"ms": 528.8051669922424
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.36984243988990784,
+					"ms": 520.6342499877792
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3219621777534485,
+					"ms": 426.40041699633
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2853332757949829,
+					"ms": 381.5856669971254
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.36979103088378906,
+					"ms": 336.03258299990557
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3210461437702179,
+					"ms": 325.4963340004906
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.28561702370643616,
+					"ms": 338.372750004055
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.36926501989364624,
+					"ms": 330.4217919940129
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.32162413001060486,
+					"ms": 310.2062910038512
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2832395136356354,
+					"ms": 324.49370899121277
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3667603135108948,
+					"ms": 294.32187500060536
+				}
+			]
+		},
+		{
+			"case": "validation-1-pot",
+			"goal": "pot",
+			"mode": "json",
+			"complete": false,
+			"steps": 16,
+			"minutes": 360,
+			"trace": [
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 64,
+						"clay": 0,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8180842995643616,
+					"ms": 220.04700000979938
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 54,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8926354050636292,
+					"ms": 205.61137500044424
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 44,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7914851903915405,
+					"ms": 206.27858299121726
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 34,
+						"clay": 30,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8254164457321167,
+					"ms": 200.85216700681485
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 24,
+						"clay": 40,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8778886795043945,
+					"ms": 205.50262500182725
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 14,
+						"clay": 50,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9084950089454651,
+					"ms": 189.4654579955386
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 4,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.503432035446167,
+					"ms": 148.1629579939181
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 97,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.879418134689331,
+					"ms": 228.05754099681508
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 87,
+						"clay": 70,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7800828218460083,
+					"ms": 219.8963749979157
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 77,
+						"clay": 80,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8279114365577698,
+					"ms": 223.7190419982653
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 67,
+						"clay": 90,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8790032863616943,
+					"ms": 223.4165420086356
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 57,
+						"clay": 100,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7792078256607056,
+					"ms": 215.41295800125226
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 47,
+						"clay": 110,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.825042724609375,
+					"ms": 222.3184580070665
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 37,
+						"clay": 120,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8769449591636658,
+					"ms": 220.54970799945295
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 27,
+						"clay": 130,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7740359306335449,
+					"ms": 215.69816599367186
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 17,
+						"clay": 140,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8637275099754333,
+					"ms": 190.08895799925085
+				}
+			]
+		},
+		{
+			"case": "validation-4-home",
+			"goal": "home",
+			"mode": "json",
+			"complete": true,
+			"steps": 1,
+			"minutes": 21,
+			"trace": [
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 38,
+						"clay": 15,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.8010868430137634,
+					"ms": 203.10095899912994
+				}
+			]
+		},
+		{
+			"case": "validation-5-wage",
+			"goal": "wage",
+			"mode": "json",
+			"complete": true,
+			"steps": 3,
+			"minutes": 540,
+			"trace": [
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 90,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.39614856243133545,
+					"ms": 227.30979100742843
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 40,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2600056231021881,
+					"ms": 218.99358299560845
+				},
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 85,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3784610331058502,
+					"ms": 239.5276669994928
+				}
+			]
+		},
+		{
+			"case": "validation-6-pot",
+			"goal": "pot",
+			"mode": "json",
+			"complete": false,
+			"steps": 16,
+			"minutes": 311,
+			"trace": [
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4110953211784363,
+					"ms": 180.24833299568854
+				},
+				{
+					"action": "walk_to_home",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 94,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4281049072742462,
+					"ms": 190.97325000620913
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 82,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.36424732208251953,
+					"ms": 153.98037500563078
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.32204076647758484,
+					"ms": 142.31383299920708
+				},
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 96,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.37838929891586304,
+					"ms": 137.6233329938259
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 87,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2757797837257385,
+					"ms": 209.11804201023187
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 96,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3573254942893982,
+					"ms": 209.88704200135544
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.30960842967033386,
+					"ms": 216.9819590053521
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2755736708641052,
+					"ms": 252.15683299757075
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.35674428939819336,
+					"ms": 329.92816698970273
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.31029507517814636,
+					"ms": 465.21579200634733
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2755320370197296,
+					"ms": 505.9287909971317
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3572036623954773,
+					"ms": 440.33883399970364
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3095947206020355,
+					"ms": 391.6378750000149
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.27557453513145447,
+					"ms": 379.2817079956876
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3564344048500061,
+					"ms": 363.3935840043705
+				}
+			]
+		},
+		{
+			"case": "validation-7-clay",
+			"goal": "clay",
+			"mode": "json",
+			"complete": false,
+			"steps": 16,
+			"minutes": 160,
+			"trace": [
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.36068373918533325,
+					"ms": 378.44291699002497
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 52,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3119630217552185,
+					"ms": 374.70858299639076
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.26565852761268616,
+					"ms": 380.48566700308584
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 70,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3618319034576416,
+					"ms": 379.05066600069404
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 79,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3118765950202942,
+					"ms": 395.28329198947176
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 88,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.26084205508232117,
+					"ms": 438.2679160044063
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 97,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.35037699341773987,
+					"ms": 407.8570829879027
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.30836057662963867,
+					"ms": 402.59387499827426
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.2612927258014679,
+					"ms": 371.67612499615643
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3528304100036621,
+					"ms": 363.96237499138806
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.30797478556632996,
+					"ms": 360.7880420022411
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.26369279623031616,
+					"ms": 362.6147500035586
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.35763075947761536,
+					"ms": 362.56637499900535
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3078307509422302,
+					"ms": 355.6228750094306
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.26377835869789124,
+					"ms": 364.6844169998076
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3570616841316223,
+					"ms": 361.1588329949882
+				}
+			]
+		},
+		{
+			"case": "validation-0-pot",
+			"goal": "pot",
+			"mode": "prose",
+			"complete": false,
+			"steps": 16,
+			"minutes": 159,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.26451706886291504,
+					"ms": 186.40674999915063
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 83,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4479619860649109,
+					"ms": 242.84412499400787
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3710572421550751,
+					"ms": 226.9077500095591
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5020095705986023,
+					"ms": 234.8887500120327
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.44723060727119446,
+					"ms": 250.29929100128356
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.36997127532958984,
+					"ms": 266.3327920017764
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5036711692810059,
+					"ms": 285.4772909922758
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.44714459776878357,
+					"ms": 308.971833990654
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.36980384588241577,
+					"ms": 317.7413749945117
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.502094030380249,
+					"ms": 328.056333004497
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.447650283575058,
+					"ms": 323.0207500018878
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3701968193054199,
+					"ms": 315.58629201026633
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5031582713127136,
+					"ms": 290.36666700267233
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4473179876804352,
+					"ms": 273.31783300905954
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.36936575174331665,
+					"ms": 263.82125000236556
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5022218823432922,
+					"ms": 263.7198340089526
+				}
+			]
+		},
+		{
+			"case": "validation-1-pot",
+			"goal": "pot",
+			"mode": "prose",
+			"complete": false,
+			"steps": 16,
+			"minutes": 360,
+			"trace": [
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 64,
+						"clay": 0,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8275353312492371,
+					"ms": 187.48929200228304
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 54,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8507864475250244,
+					"ms": 181.2665829929756
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 44,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.746933102607727,
+					"ms": 181.19216700142715
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 34,
+						"clay": 30,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8252317905426025,
+					"ms": 180.1054999959888
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 24,
+						"clay": 40,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8453457951545715,
+					"ms": 182.92733299313113
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 14,
+						"clay": 50,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8133357167243958,
+					"ms": 171.47274999297224
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 4,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.4943656623363495,
+					"ms": 123.69350000517443
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 97,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8287847638130188,
+					"ms": 185.9108750068117
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 87,
+						"clay": 70,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7386758923530579,
+					"ms": 188.50079100229777
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 77,
+						"clay": 80,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8229815363883972,
+					"ms": 189.28129100822844
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 67,
+						"clay": 90,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8478062748908997,
+					"ms": 175.43200000363868
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 57,
+						"clay": 100,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7434350848197937,
+					"ms": 161.17287499946542
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 47,
+						"clay": 110,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8175770044326782,
+					"ms": 159.24749999248888
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 37,
+						"clay": 120,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8385675549507141,
+					"ms": 161.0285410133656
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 27,
+						"clay": 130,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7336404323577881,
+					"ms": 174.4082079967484
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 17,
+						"clay": 140,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7868595123291016,
+					"ms": 165.77958400011994
+				}
+			]
+		},
+		{
+			"case": "validation-4-home",
+			"goal": "home",
+			"mode": "prose",
+			"complete": true,
+			"steps": 1,
+			"minutes": 21,
+			"trace": [
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 38,
+						"clay": 15,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.7293936610221863,
+					"ms": 193.6953340045875
+				}
+			]
+		},
+		{
+			"case": "validation-5-wage",
+			"goal": "wage",
+			"mode": "prose",
+			"complete": true,
+			"steps": 3,
+			"minutes": 540,
+			"trace": [
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 90,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5764967799186707,
+					"ms": 213.21916600572877
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 40,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.23744161427021027,
+					"ms": 199.4839580002008
+				},
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 85,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5959138870239258,
+					"ms": 194.4273749977583
+				}
+			]
+		},
+		{
+			"case": "validation-6-pot",
+			"goal": "pot",
+			"mode": "prose",
+			"complete": false,
+			"steps": 16,
+			"minutes": 153,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4361529052257538,
+					"ms": 139.5803750056075
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 5,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3514653146266937,
+					"ms": 164.9729170021601
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 14,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4253053069114685,
+					"ms": 177.4282080004923
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 23,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5091354250907898,
+					"ms": 168.32962499756832
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 32,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4543939232826233,
+					"ms": 164.29420800704975
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 41,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3691570460796356,
+					"ms": 163.19979200488888
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 50,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5067052245140076,
+					"ms": 162.95274998992682
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 59,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.44767749309539795,
+					"ms": 162.4904170021182
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": true,
+					"state": {
+						"location": "tavern",
+						"energy": 68,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.36537256836891174,
+					"ms": 161.6597499960335
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 77,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5027284622192383,
+					"ms": 155.7486250094371
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 86,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.44753047823905945,
+					"ms": 158.49929199612234
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 95,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3659641444683075,
+					"ms": 172.3205829912331
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.49972835183143616,
+					"ms": 193.53949998912867
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.44953152537345886,
+					"ms": 229.26408400235232
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3670571446418762,
+					"ms": 313.33945799269713
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5029763579368591,
+					"ms": 517.6833330042427
+				}
+			]
+		},
+		{
+			"case": "validation-7-clay",
+			"goal": "clay",
+			"mode": "prose",
+			"complete": false,
+			"steps": 16,
+			"minutes": 160,
+			"trace": [
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5205855369567871,
+					"ms": 521.7330000014044
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 52,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.4524261951446533,
+					"ms": 399.7178330027964
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3526654541492462,
+					"ms": 341.57662501093
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 70,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5192252993583679,
+					"ms": 320.13016600103583
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 79,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.445428729057312,
+					"ms": 300.220334000187
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 88,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3476165235042572,
+					"ms": 297.4540419963887
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 97,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5117406249046326,
+					"ms": 289.03037500276696
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.439660906791687,
+					"ms": 283.5089580039494
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.34813186526298523,
+					"ms": 293.8883330061799
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5108523964881897,
+					"ms": 284.42795800219756
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.45246466994285583,
+					"ms": 283.3486669987906
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.34969428181648254,
+					"ms": 283.5709589999169
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5168747901916504,
+					"ms": 279.1311670007417
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.4511179029941559,
+					"ms": 284.77399999974295
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3516075611114502,
+					"ms": 276.48079200298525
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5148375630378723,
+					"ms": 270.49650000117254
+				}
+			]
+		},
+		{
+			"case": "validation-0-pot",
+			"goal": "pot",
+			"mode": "history",
+			"complete": false,
+			"steps": 16,
+			"minutes": 159,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2849500775337219,
+					"ms": 194.78520899428986
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 83,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.41151681542396545,
+					"ms": 293.575374991633
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8483012318611145,
+					"ms": 283.42033398803324
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8927853107452393,
+					"ms": 292.90208300517406
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.877561628818512,
+					"ms": 297.28520900243893
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8450040817260742,
+					"ms": 301.32679200323764
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8500874042510986,
+					"ms": 289.33700000925455
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.852957546710968,
+					"ms": 290.5638749944046
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8432551026344299,
+					"ms": 284.380915996735
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8502525091171265,
+					"ms": 295.03029098850675
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8550466895103455,
+					"ms": 292.6221659872681
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8577739596366882,
+					"ms": 285.4729169921484
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8593543171882629,
+					"ms": 294.0868340083398
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8629826307296753,
+					"ms": 284.31208299298305
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8527796864509583,
+					"ms": 290.69416600395925
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8550667762756348,
+					"ms": 273.6424999893643
+				}
+			]
+		},
+		{
+			"case": "validation-1-pot",
+			"goal": "pot",
+			"mode": "history",
+			"complete": false,
+			"steps": 16,
+			"minutes": 360,
+			"trace": [
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 64,
+						"clay": 0,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.916607141494751,
+					"ms": 193.28454199421685
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 54,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9788104295730591,
+					"ms": 192.5286670011701
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 44,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9020282030105591,
+					"ms": 189.98262500099372
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 34,
+						"clay": 30,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9027533531188965,
+					"ms": 192.6672499976121
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 24,
+						"clay": 40,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8723337054252625,
+					"ms": 190.64741701004095
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 14,
+						"clay": 50,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8351585268974304,
+					"ms": 168.09045799891464
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 4,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.49173703789711,
+					"ms": 123.14345801132731
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 97,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.696355402469635,
+					"ms": 188.24470799881965
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 87,
+						"clay": 70,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7708880305290222,
+					"ms": 187.63199998647906
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 77,
+						"clay": 80,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.81705242395401,
+					"ms": 187.3792910046177
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 67,
+						"clay": 90,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8517550230026245,
+					"ms": 184.3444999976782
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 57,
+						"clay": 100,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7951905727386475,
+					"ms": 183.90616599936038
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 47,
+						"clay": 110,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8589799404144287,
+					"ms": 183.11508400074672
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 37,
+						"clay": 120,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8622962832450867,
+					"ms": 180.59283299953677
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 27,
+						"clay": 130,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7860422730445862,
+					"ms": 182.99679200572427
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 17,
+						"clay": 140,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8244448304176331,
+					"ms": 157.7820420061471
+				}
+			]
+		},
+		{
+			"case": "validation-4-home",
+			"goal": "home",
+			"mode": "history",
+			"complete": true,
+			"steps": 1,
+			"minutes": 21,
+			"trace": [
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 38,
+						"clay": 15,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.755489706993103,
+					"ms": 170.49658398900647
+				}
+			]
+		},
+		{
+			"case": "validation-5-wage",
+			"goal": "wage",
+			"mode": "history",
+			"complete": false,
+			"steps": 16,
+			"minutes": 395,
+			"trace": [
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 90,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6655271649360657,
+					"ms": 184.11783300689422
+				},
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "farm",
+						"energy": 40,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.21714380383491516,
+					"ms": 179.10800001118332
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 25,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.33947810530662537,
+					"ms": 255.85495900304522
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 34,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9326275587081909,
+					"ms": 263.67712499632034
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9407235980033875,
+					"ms": 267.50170800369233
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 52,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8823802471160889,
+					"ms": 282.03874999599066
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": true,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8794301152229309,
+					"ms": 285.8761250099633
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 70,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9102694392204285,
+					"ms": 280.1875840086723
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 79,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8840959072113037,
+					"ms": 286.2514580046991
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 88,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8827239871025085,
+					"ms": 281.1618330015335
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 97,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.894832193851471,
+					"ms": 262.27204099996015
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8657302856445312,
+					"ms": 282.4817499931669
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8745953440666199,
+					"ms": 286.99383400089573
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9047383069992065,
+					"ms": 295.6159169989405
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.877656102180481,
+					"ms": 292.319750005845
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8804044723510742,
+					"ms": 290.7333750044927
+				}
+			]
+		},
+		{
+			"case": "validation-6-pot",
+			"goal": "pot",
+			"mode": "history",
+			"complete": false,
+			"steps": 16,
+			"minutes": 153,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4567711651325226,
+					"ms": 132.37366698740516
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 5,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3069611191749573,
+					"ms": 214.12874999805354
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 9,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9308248162269592,
+					"ms": 223.00675000587944
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 13,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7535287737846375,
+					"ms": 219.65812498820014
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 17,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6867565512657166,
+					"ms": 218.12187500472646
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 21,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5986537337303162,
+					"ms": 217.36212499672547
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 25,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6820721626281738,
+					"ms": 218.19304199016187
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 29,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5852144360542297,
+					"ms": 221.6059999918798
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 33,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5982424020767212,
+					"ms": 235.81708400161006
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 37,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6053166389465332,
+					"ms": 245.3713750001043
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 41,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5901790261268616,
+					"ms": 301.9836250023218
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 45,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6515589952468872,
+					"ms": 299.5033330080332
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 49,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7114484906196594,
+					"ms": 269.88533399708103
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 53,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.641208827495575,
+					"ms": 227.08512499229982
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 57,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6218036413192749,
+					"ms": 224.20858299301472
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6457842588424683,
+					"ms": 213.82325000013225
+				}
+			]
+		},
+		{
+			"case": "validation-7-clay",
+			"goal": "clay",
+			"mode": "history",
+			"complete": false,
+			"steps": 16,
+			"minutes": 160,
+			"trace": [
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.4681784510612488,
+					"ms": 221.28075000364333
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 52,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9013043642044067,
+					"ms": 240.17208299483173
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8439186811447144,
+					"ms": 286.4375839999411
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 70,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8782094120979309,
+					"ms": 307.3678750079125
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 79,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8881433606147766,
+					"ms": 330.0980000058189
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 88,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8574482798576355,
+					"ms": 314.88912500208244
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 97,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.86712247133255,
+					"ms": 291.54383299464826
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.888796865940094,
+					"ms": 296.0351250076201
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8757229447364807,
+					"ms": 299.76541599899065
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8880370855331421,
+					"ms": 309.4650410057511
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9040451645851135,
+					"ms": 297.9527089919429
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8710141181945801,
+					"ms": 318.7685419979971
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8786004185676575,
+					"ms": 292.1601670095697
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.90320885181427,
+					"ms": 302.315125009045
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.876663863658905,
+					"ms": 299.48549999971874
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8897224068641663,
+					"ms": 292.0833750104066
+				}
+			]
+		},
+		{
+			"case": "validation-0-pot",
+			"goal": "pot",
+			"mode": "facts",
+			"complete": false,
+			"steps": 16,
+			"minutes": 159,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.26738372445106506,
+					"ms": 207.72625000972766
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 83,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3217935860157013,
+					"ms": 293.24295799597166
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6871898770332336,
+					"ms": 308.0250829953002
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7966119050979614,
+					"ms": 312.18099998659454
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7905018329620361,
+					"ms": 318.65183399349917
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7728419899940491,
+					"ms": 325.2484169934178
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.793709397315979,
+					"ms": 302.05937501159497
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7836170792579651,
+					"ms": 300.91595799603965
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7663653492927551,
+					"ms": 297.32979099208023
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7929015159606934,
+					"ms": 286.97408399602864
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7899535298347473,
+					"ms": 287.34358299698215
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.7928956747055054,
+					"ms": 296.1595840024529
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8075785040855408,
+					"ms": 304.12320799950976
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8017051219940186,
+					"ms": 312.3231659992598
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.786062479019165,
+					"ms": 311.0553339938633
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8019867539405823,
+					"ms": 308.0889160046354
+				}
+			]
+		},
+		{
+			"case": "validation-1-pot",
+			"goal": "pot",
+			"mode": "facts",
+			"complete": false,
+			"steps": 16,
+			"minutes": 360,
+			"trace": [
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 64,
+						"clay": 0,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.772298276424408,
+					"ms": 221.8856660038
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 54,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8918094635009766,
+					"ms": 217.97649998916313
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 44,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.754194974899292,
+					"ms": 219.98612499737646
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 34,
+						"clay": 30,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7972676753997803,
+					"ms": 213.67833300610073
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 24,
+						"clay": 40,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7607273459434509,
+					"ms": 215.91766699566506
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 14,
+						"clay": 50,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7259189486503601,
+					"ms": 180.08466700848658
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 4,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.452828586101532,
+					"ms": 141.81470799667295
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 97,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6330858469009399,
+					"ms": 200.7625830010511
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 87,
+						"clay": 70,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6301217675209045,
+					"ms": 201.1869160050992
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 77,
+						"clay": 80,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7210050225257874,
+					"ms": 196.88570899597835
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 67,
+						"clay": 90,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7347531914710999,
+					"ms": 199.47362500533927
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 57,
+						"clay": 100,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6601078510284424,
+					"ms": 199.55874999868684
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 47,
+						"clay": 110,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.757753312587738,
+					"ms": 203.58541699533816
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 37,
+						"clay": 120,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7499936819076538,
+					"ms": 203.7504159961827
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 27,
+						"clay": 130,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6466159820556641,
+					"ms": 198.85408399568405
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 17,
+						"clay": 140,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7184218764305115,
+					"ms": 173.40470899944194
+				}
+			]
+		},
+		{
+			"case": "validation-4-home",
+			"goal": "home",
+			"mode": "facts",
+			"complete": true,
+			"steps": 1,
+			"minutes": 21,
+			"trace": [
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 38,
+						"clay": 15,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.6736809015274048,
+					"ms": 189.3080839945469
+				}
+			]
+		},
+		{
+			"case": "validation-5-wage",
+			"goal": "wage",
+			"mode": "facts",
+			"complete": true,
+			"steps": 5,
+			"minutes": 570,
+			"trace": [
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 90,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.4982714354991913,
+					"ms": 211.31016699655447
+				},
+				{
+					"action": "walk_to_square",
+					"progress": false,
+					"state": {
+						"location": "farm",
+						"energy": 40,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.1954738348722458,
+					"ms": 195.4042080033105
+				},
+				{
+					"action": "walk_to_farm",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 25,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.21590033173561096,
+					"ms": 190.71795800118707
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 10,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4372066855430603,
+					"ms": 144.55966699460987
+				},
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 93,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3998636305332184,
+					"ms": 206.7581660085125
+				}
+			]
+		},
+		{
+			"case": "validation-6-pot",
+			"goal": "pot",
+			"mode": "facts",
+			"complete": false,
+			"steps": 16,
+			"minutes": 153,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.41701728105545044,
+					"ms": 145.30441699025687
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 5,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2640170454978943,
+					"ms": 226.843166994513
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 9,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8051013946533203,
+					"ms": 242.97929200110957
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 13,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6096204519271851,
+					"ms": 280.44962500280235
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 17,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5789049863815308,
+					"ms": 294.7054590040352
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 21,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4850263297557831,
+					"ms": 303.2850419986062
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 25,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6209385395050049,
+					"ms": 290.4404590080958
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 29,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5130959749221802,
+					"ms": 296.3255000067875
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 33,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.476200670003891,
+					"ms": 295.9642499918118
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 37,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.550279438495636,
+					"ms": 302.23262500658166
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 41,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5169315338134766,
+					"ms": 298.777500007418
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 45,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5308393836021423,
+					"ms": 303.2306249951944
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 49,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.654033362865448,
+					"ms": 286.13258300174493
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 53,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5624141097068787,
+					"ms": 292.1979999955511
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 57,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4975811541080475,
+					"ms": 296.8268749973504
+				},
+				{
+					"action": "consume:{\"item\": \"beer\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5889319181442261,
+					"ms": 325.29074999911245
+				}
+			]
+		},
+		{
+			"case": "validation-7-clay",
+			"goal": "clay",
+			"mode": "facts",
+			"complete": false,
+			"steps": 16,
+			"minutes": 160,
+			"trace": [
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3945924937725067,
+					"ms": 304.9010830000043
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 52,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.801507294178009,
+					"ms": 314.482792004128
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.715652585029602,
+					"ms": 342.7088339958573
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 70,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7987871170043945,
+					"ms": 350.6219169939868
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 79,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.825328528881073,
+					"ms": 346.57249999872874
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 88,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7728970050811768,
+					"ms": 341.1039580096258
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 97,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.798224687576294,
+					"ms": 329.3395410000812
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8269404768943787,
+					"ms": 351.48633300559595
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8005396723747253,
+					"ms": 397.76529200025834
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8336273431777954,
+					"ms": 367.7707500028191
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8490155339241028,
+					"ms": 353.18016599921975
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7950153946876526,
+					"ms": 340.78045800561085
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8183700442314148,
+					"ms": 333.2927919982467
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8492847681045532,
+					"ms": 326.9393329974264
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8051357269287109,
+					"ms": 329.4624580012169
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8370296359062195,
+					"ms": 336.9996249966789
+				}
+			]
+		},
+		{
+			"case": "validation-0-pot",
+			"goal": "pot",
+			"mode": "outcomes",
+			"complete": false,
+			"steps": 16,
+			"minutes": 159,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.26536497473716736,
+					"ms": 382.7928749960847
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 83,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2442203015089035,
+					"ms": 659.2133329977514
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3650825619697571,
+					"ms": 704.2936250072671
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.588855504989624,
+					"ms": 706.706541008316
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5864582657814026,
+					"ms": 722.0499579998432
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.42826393246650696,
+					"ms": 704.2052500037244
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5795292258262634,
+					"ms": 700.0381249963539
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5565308332443237,
+					"ms": 670.748000004096
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.41925057768821716,
+					"ms": 688.1365829904098
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5861696600914001,
+					"ms": 689.0694169997005
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5733720064163208,
+					"ms": 674.2955420049839
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.45010584592819214,
+					"ms": 701.7747089994373
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6007335186004639,
+					"ms": 689.387207996333
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5833019018173218,
+					"ms": 683.1772919977084
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4423289895057678,
+					"ms": 701.6997080063447
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5993462800979614,
+					"ms": 708.805874994141
+				}
+			]
+		},
+		{
+			"case": "validation-1-pot",
+			"goal": "pot",
+			"mode": "outcomes",
+			"complete": false,
+			"steps": 16,
+			"minutes": 360,
+			"trace": [
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 64,
+						"clay": 0,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6421345472335815,
+					"ms": 419.68350000388455
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 54,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.916287362575531,
+					"ms": 424.1849579993868
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 44,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7626160979270935,
+					"ms": 423.1999579933472
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 34,
+						"clay": 30,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7131814956665039,
+					"ms": 421.91900000034366
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 24,
+						"clay": 40,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8621694445610046,
+					"ms": 418.19537499395665
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 14,
+						"clay": 50,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7995566725730896,
+					"ms": 366.2926669931039
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 4,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.42897912859916687,
+					"ms": 196.07641699258238
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 97,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7696840763092041,
+					"ms": 411.3435000035679
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 87,
+						"clay": 70,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7185941338539124,
+					"ms": 407.7815000055125
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 77,
+						"clay": 80,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6716958284378052,
+					"ms": 426.31420800171327
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 67,
+						"clay": 90,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8213733434677124,
+					"ms": 429.9107080005342
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 57,
+						"clay": 100,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7477901577949524,
+					"ms": 417.436292002094
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 47,
+						"clay": 110,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6948749423027039,
+					"ms": 422.2224590048427
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 37,
+						"clay": 120,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8157747983932495,
+					"ms": 424.50545899919234
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 27,
+						"clay": 130,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7013345956802368,
+					"ms": 452.63724999676924
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 17,
+						"clay": 140,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7981221079826355,
+					"ms": 345.7602499984205
+				}
+			]
+		},
+		{
+			"case": "validation-4-home",
+			"goal": "home",
+			"mode": "outcomes",
+			"complete": true,
+			"steps": 1,
+			"minutes": 21,
+			"trace": [
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 38,
+						"clay": 15,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.6294435858726501,
+					"ms": 390.61262500763405
+				}
+			]
+		},
+		{
+			"case": "validation-5-wage",
+			"goal": "wage",
+			"mode": "outcomes",
+			"complete": false,
+			"steps": 16,
+			"minutes": 395,
+			"trace": [
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 90,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.32764238119125366,
+					"ms": 460.51929199893493
+				},
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "farm",
+						"energy": 40,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2833684980869293,
+					"ms": 397.27354199567344
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 25,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.18257948756217957,
+					"ms": 729.8519999894779
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 34,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6457329988479614,
+					"ms": 778.1756660115207
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6278623342514038,
+					"ms": 752.0121249981457
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 52,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4620538651943207,
+					"ms": 721.1822920071427
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": true,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5926201939582825,
+					"ms": 760.8047920075478
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 70,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6421578526496887,
+					"ms": 733.0218339920975
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 79,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.47985154390335083,
+					"ms": 709.1554590006126
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 88,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6196956634521484,
+					"ms": 705.9728339954745
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 97,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6289520859718323,
+					"ms": 684.5453749992885
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4634687304496765,
+					"ms": 740.5113339918898
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6071126461029053,
+					"ms": 734.5185829908587
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.658722460269928,
+					"ms": 673.460709003848
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.49107223749160767,
+					"ms": 707.2464999946533
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6205214858055115,
+					"ms": 698.8696659973357
+				}
+			]
+		},
+		{
+			"case": "validation-6-pot",
+			"goal": "pot",
+			"mode": "outcomes",
+			"complete": false,
+			"steps": 16,
+			"minutes": 288,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5255750417709351,
+					"ms": 238.9492920046905
+				},
+				{
+					"action": "walk_to_square",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 5,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.30496078729629517,
+					"ms": 485.2427500009071
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 2,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.38028377294540405,
+					"ms": 179.40770799759775
+				},
+				{
+					"action": "walk_to_home",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 98,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.46919941902160645,
+					"ms": 335.2546250098385
+				},
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 86,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3727058470249176,
+					"ms": 318.0202919902513
+				},
+				{
+					"action": "walk_to_square",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 77,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.26046493649482727,
+					"ms": 618.9428749930812
+				},
+				{
+					"action": "walk_to_home",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 74,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5648321509361267,
+					"ms": 301.00245799985714
+				},
+				{
+					"action": "walk_to_square",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 62,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.29672273993492126,
+					"ms": 316.36879200232215
+				},
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 50,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.31915220618247986,
+					"ms": 308.7521669949638
+				},
+				{
+					"action": "walk_to_square",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 47,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2786640524864197,
+					"ms": 620.5876249878202
+				},
+				{
+					"action": "walk_to_home",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 44,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4394432008266449,
+					"ms": 354.61983300046995
+				},
+				{
+					"action": "walk_to_square",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 32,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5498502254486084,
+					"ms": 326.57508400734514
+				},
+				{
+					"action": "walk_to_home",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 20,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5063360333442688,
+					"ms": 328.6403749953024
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "home",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.42088472843170166,
+					"ms": 173.52770899015013
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 94,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3298647403717041,
+					"ms": 329.0909589995863
+				},
+				{
+					"action": "walk_to_square",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 97,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.48950082063674927,
+					"ms": 327.75062500149943
+				}
+			]
+		},
+		{
+			"case": "validation-7-clay",
+			"goal": "clay",
+			"mode": "outcomes",
+			"complete": false,
+			"steps": 16,
+			"minutes": 160,
+			"trace": [
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.2752059996128082,
+					"ms": 597.597667001537
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 52,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5582396388053894,
+					"ms": 680.247958007385
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.352738618850708,
+					"ms": 680.8775420067832
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 70,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5293599963188171,
+					"ms": 703.510457999073
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 79,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5712903141975403,
+					"ms": 706.0869999986608
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 88,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.39027923345565796,
+					"ms": 663.837957996293
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 97,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5287398099899292,
+					"ms": 697.0560420013499
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5746613144874573,
+					"ms": 681.8424170051003
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.42963889241218567,
+					"ms": 694.3810000084341
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5866870284080505,
+					"ms": 674.7062909998931
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6095876097679138,
+					"ms": 679.2191249987809
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.42845630645751953,
+					"ms": 714.4091670052148
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5621451735496521,
+					"ms": 691.592875009519
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6125867962837219,
+					"ms": 671.6351250070147
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.4419196546077728,
+					"ms": 660.3123340028105
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5865415930747986,
+					"ms": 678.7422079942189
+				}
+			]
+		},
+		{
+			"case": "validation-0-pot",
+			"goal": "pot",
+			"mode": "lookahead",
+			"complete": false,
+			"steps": 16,
+			"minutes": 960,
+			"trace": [
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.2465243935585022,
+					"ms": 256.05325000651646
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 96,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5621864795684814,
+					"ms": 268.9104169985512
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 98,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5688857436180115,
+					"ms": 252.75995800620876
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.44921064376831055,
+					"ms": 240.27791600383352
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4166852831840515,
+					"ms": 249.29487500048708
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5200932621955872,
+					"ms": 242.50483300420456
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4748501181602478,
+					"ms": 255.3011670097476
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.41573426127433777,
+					"ms": 267.09262499934994
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5396518111228943,
+					"ms": 283.67141699709464
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4646284878253937,
+					"ms": 281.0144169925479
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4166117012500763,
+					"ms": 284.23049999400973
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.515591561794281,
+					"ms": 268.79808300873265
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.45549964904785156,
+					"ms": 270.395625004312
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4135424792766571,
+					"ms": 263.62320900079794
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5229224562644958,
+					"ms": 262.4122090055607
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.47926226258277893,
+					"ms": 256.47100000060163
+				}
+			]
+		},
+		{
+			"case": "validation-1-pot",
+			"goal": "pot",
+			"mode": "lookahead",
+			"complete": false,
+			"steps": 16,
+			"minutes": 360,
+			"trace": [
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 64,
+						"clay": 0,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.702468752861023,
+					"ms": 271.9370419945335
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 54,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8727786540985107,
+					"ms": 277.1468749997439
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 44,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6357550024986267,
+					"ms": 276.285125000868
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 34,
+						"clay": 30,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7730333805084229,
+					"ms": 280.5641250015469
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 24,
+						"clay": 40,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7540836334228516,
+					"ms": 284.7801659954712
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 14,
+						"clay": 50,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6774950623512268,
+					"ms": 233.34758401324507
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 4,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.4741075038909912,
+					"ms": 165.3499169915449
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 97,
+						"clay": 60,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6291088461875916,
+					"ms": 302.98224999569356
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 87,
+						"clay": 70,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5769419074058533,
+					"ms": 297.0177910028724
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 77,
+						"clay": 80,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6975437998771667,
+					"ms": 290.859749991796
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 67,
+						"clay": 90,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6974161863327026,
+					"ms": 289.14933299529366
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 57,
+						"clay": 100,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5936354994773865,
+					"ms": 281.9278749957448
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 47,
+						"clay": 110,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7398352026939392,
+					"ms": 266.69908400799613
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 37,
+						"clay": 120,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.751690685749054,
+					"ms": 265.992415996152
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 27,
+						"clay": 130,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5724052786827087,
+					"ms": 258.455708011752
+				},
+				{
+					"action": "collect_clay",
+					"progress": false,
+					"state": {
+						"location": "river_bank",
+						"energy": 17,
+						"clay": 140,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7612081170082092,
+					"ms": 209.27704199857544
+				}
+			]
+		},
+		{
+			"case": "validation-4-home",
+			"goal": "home",
+			"mode": "lookahead",
+			"complete": true,
+			"steps": 1,
+			"minutes": 21,
+			"trace": [
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 38,
+						"clay": 15,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.7401870489120483,
+					"ms": 234.32437500741798
+				}
+			]
+		},
+		{
+			"case": "validation-5-wage",
+			"goal": "wage",
+			"mode": "lookahead",
+			"complete": false,
+			"steps": 16,
+			"minutes": 1101,
+			"trace": [
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 90,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5247711539268494,
+					"ms": 266.15541700448375
+				},
+				{
+					"action": "walk_to_home",
+					"progress": false,
+					"state": {
+						"location": "farm",
+						"energy": 40,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.20852331817150116,
+					"ms": 237.33462499512825
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "home",
+						"energy": 19,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.31042829155921936,
+					"ms": 214.58008298941422
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 89,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.48331108689308167,
+					"ms": 251.47920800372958
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 95,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4442998766899109,
+					"ms": 252.63362500118092
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 97,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4865622818470001,
+					"ms": 252.54816599772312
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 98,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4178062975406647,
+					"ms": 253.2799589971546
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.35397377610206604,
+					"ms": 254.01404198782984
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4475971460342407,
+					"ms": 252.16324999928474
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.42062240839004517,
+					"ms": 252.5707080058055
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.38816753029823303,
+					"ms": 253.09274999017362
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4701707661151886,
+					"ms": 257.55900000513066
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.38662973046302795,
+					"ms": 273.2043750002049
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.37512174248695374,
+					"ms": 273.9757910021581
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.44661375880241394,
+					"ms": 255.77087501005735
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3893662691116333,
+					"ms": 243.59008300234564
+				}
+			]
+		},
+		{
+			"case": "validation-6-pot",
+			"goal": "pot",
+			"mode": "lookahead",
+			"complete": false,
+			"steps": 16,
+			"minutes": 798,
+			"trace": [
+				{
+					"action": "walk_to_tavern",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4663158059120178,
+					"ms": 165.7006659952458
+				},
+				{
+					"action": "walk_to_square",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 5,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.34208187460899353,
+					"ms": 309.6262500039302
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 2,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.3814093768596649,
+					"ms": 146.69374999357387
+				},
+				{
+					"action": "walk_to_home",
+					"progress": false,
+					"state": {
+						"location": "square",
+						"energy": 98,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4477059841156006,
+					"ms": 245.2243330044439
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 86,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.35813912749290466,
+					"ms": 252.18999999924563
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 93,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.40956079959869385,
+					"ms": 239.06537500442937
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 96,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4611491858959198,
+					"ms": 251.89229100942612
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 98,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4107086658477783,
+					"ms": 221.71875000640284
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.519411563873291,
+					"ms": 213.75162499316502
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.459953635931015,
+					"ms": 216.9163749931613
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.41335180401802063,
+					"ms": 233.4546249912819
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5135869979858398,
+					"ms": 244.4368750002468
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.43802082538604736,
+					"ms": 250.76579200685956
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.41663411259651184,
+					"ms": 259.88754199352115
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.5192194581031799,
+					"ms": 260.0082920107525
+				},
+				{
+					"action": "rest:{\"time\": 60}",
+					"progress": false,
+					"state": {
+						"location": "home",
+						"energy": 99,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.4562510550022125,
+					"ms": 262.60450000700075
+				}
+			]
+		},
+		{
+			"case": "validation-7-clay",
+			"goal": "clay",
+			"mode": "lookahead",
+			"complete": false,
+			"steps": 16,
+			"minutes": 160,
+			"trace": [
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.3632660508155823,
+					"ms": 414.9692079954548
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 52,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6955478191375732,
+					"ms": 422.6027920085471
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 61,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.5717629790306091,
+					"ms": 417.5047909957357
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 70,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8019126653671265,
+					"ms": 425.76537501008715
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 79,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7576701045036316,
+					"ms": 443.7086659891065
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 88,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6618373394012451,
+					"ms": 431.0812080075266
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 97,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8123739957809448,
+					"ms": 423.24312499840744
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7538047432899475,
+					"ms": 411.2642499967478
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6993513703346252,
+					"ms": 438.36937501328066
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8409073352813721,
+					"ms": 431.68787499598693
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7787125110626221,
+					"ms": 415.2594589977525
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.6927926540374756,
+					"ms": 405.24812499643303
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8292913436889648,
+					"ms": 416.040541997063
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7835648655891418,
+					"ms": 430.8055419969605
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7089908123016357,
+					"ms": 445.7784999976866
+				},
+				{
+					"action": "consume:{\"item\": \"burger\"}",
+					"progress": false,
+					"state": {
+						"location": "tavern",
+						"energy": 99,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.8430398106575012,
+					"ms": 464.46950000245124
+				}
+			]
+		},
+		{
+			"case": "validation-0-pot",
+			"goal": "pot",
+			"mode": "planner",
+			"complete": true,
+			"steps": 5,
+			"minutes": 121,
+			"trace": [
+				{
+					"action": "walk_to_river_bank",
+					"progress": true,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 73,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "walk_to_square",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 63,
+						"clay": 20,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "use_potter_wheel",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 53,
+						"clay": 20,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 33,
+						"clay": 5,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				}
+			]
+		},
+		{
+			"case": "validation-1-pot",
+			"goal": "pot",
+			"mode": "planner",
+			"complete": true,
+			"steps": 5,
+			"minutes": 122,
+			"trace": [
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 64,
+						"clay": 0,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 54,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "walk_to_square",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 44,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "use_potter_wheel",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 34,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 14,
+						"clay": 5,
+						"pot": 1,
+						"money": 80
+					},
+					"confidence": null,
+					"ms": 0
+				}
+			]
+		},
+		{
+			"case": "validation-4-home",
+			"goal": "home",
+			"mode": "planner",
+			"complete": true,
+			"steps": 1,
+			"minutes": 21,
+			"trace": [
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 38,
+						"clay": 15,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				}
+			]
+		},
+		{
+			"case": "validation-5-wage",
+			"goal": "wage",
+			"mode": "planner",
+			"complete": true,
+			"steps": 3,
+			"minutes": 510,
+			"trace": [
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 90,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "rest:{\"time\": 30}",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 40,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 75,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				}
+			]
+		},
+		{
+			"case": "validation-6-pot",
+			"goal": "pot",
+			"mode": "planner",
+			"complete": true,
+			"steps": 7,
+			"minutes": 162,
+			"trace": [
+				{
+					"action": "rest:{\"time\": 30}",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "walk_to_river_bank",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 75,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 65,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 55,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "walk_to_square",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 45,
+						"clay": 20,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "use_potter_wheel",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 35,
+						"clay": 20,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 15,
+						"clay": 5,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": null,
+					"ms": 0
+				}
+			]
+		},
+		{
+			"case": "validation-7-clay",
+			"goal": "clay",
+			"mode": "planner",
+			"complete": true,
+			"steps": 2,
+			"minutes": 33,
+			"trace": [
+				{
+					"action": "walk_to_river_bank",
+					"progress": true,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": null,
+					"ms": 0
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 30,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": null,
+					"ms": 0
+				}
+			]
+		}
+	],
+	"model": {
+		"id": "fastino/GLiNER2.5-Decide",
+		"revision": "bbe10ff77ebb238777c17d3a8ac9260e30929057",
+		"weight_sha256": "40a5a23ff860dc3dff426cecd1048cacdd29c648c96db209dad818e9686dc997"
+	},
+	"date": "2026-10-01"
+}

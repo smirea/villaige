@@ -1,0 +1,958 @@
+{
+	"device": "mps",
+	"versions": {
+		"gliner2": "2.0.0",
+		"torch": "2.14.0",
+		"transformers": "4.57.6"
+	},
+	"splits": {
+		"development": {
+			"goal_router": {
+				"decisions": 87,
+				"progress_rate": 0.9655172413793104,
+				"order_stability": 0.896551724137931,
+				"median_ms": 78.22920799662825,
+				"by_goal": {
+					"pot": 1.0,
+					"clay": 0.9523809523809523,
+					"wage": 1.0,
+					"home": 0.8888888888888888
+				}
+			}
+		},
+		"validation": {
+			"goal_router": {
+				"decisions": 90,
+				"progress_rate": 0.9666666666666667,
+				"order_stability": 0.9,
+				"median_ms": 74.6605210006237,
+				"by_goal": {
+					"pot": 1.0,
+					"clay": 1.0,
+					"wage": 1.0,
+					"home": 0.8571428571428571
+				}
+			}
+		}
+	},
+	"episodes": [
+		{
+			"case": "validation-0-pot",
+			"goal": "pot",
+			"mode": "goal_router",
+			"complete": true,
+			"steps": 5,
+			"minutes": 121,
+			"trace": [
+				{
+					"action": "walk_to_river_bank",
+					"progress": true,
+					"state": {
+						"location": "home",
+						"energy": 92,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9015159606933594,
+					"inferred_goal": "pot",
+					"ms": 74.20679199276492
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 73,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9508323669433594,
+					"inferred_goal": "pot",
+					"ms": 81.27591598895378
+				},
+				{
+					"action": "walk_to_square",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 63,
+						"clay": 20,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9854475855827332,
+					"inferred_goal": "pot",
+					"ms": 79.92470799945295
+				},
+				{
+					"action": "use_potter_wheel",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 53,
+						"clay": 20,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9557271003723145,
+					"inferred_goal": "pot",
+					"ms": 75.70524999755435
+				},
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 33,
+						"clay": 5,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.975618302822113,
+					"inferred_goal": "pot",
+					"ms": 86.7372089996934
+				}
+			]
+		},
+		{
+			"case": "validation-1-pot",
+			"goal": "pot",
+			"mode": "goal_router",
+			"complete": true,
+			"steps": 5,
+			"minutes": 122,
+			"trace": [
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 64,
+						"clay": 0,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9448656439781189,
+					"inferred_goal": "pot",
+					"ms": 77.03495900204871
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 54,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.935535192489624,
+					"inferred_goal": "pot",
+					"ms": 89.78112500335556
+				},
+				{
+					"action": "walk_to_square",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 44,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9897518157958984,
+					"inferred_goal": "pot",
+					"ms": 76.17291700444184
+				},
+				{
+					"action": "use_potter_wheel",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 34,
+						"clay": 20,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9622065424919128,
+					"inferred_goal": "pot",
+					"ms": 74.42841699230485
+				},
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 14,
+						"clay": 5,
+						"pot": 1,
+						"money": 80
+					},
+					"confidence": 0.9737180471420288,
+					"inferred_goal": "pot",
+					"ms": 75.2742080076132
+				}
+			]
+		},
+		{
+			"case": "validation-4-home",
+			"goal": "home",
+			"mode": "goal_router",
+			"complete": true,
+			"steps": 1,
+			"minutes": 21,
+			"trace": [
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 38,
+						"clay": 15,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.8705952167510986,
+					"inferred_goal": "home",
+					"ms": 76.8111250072252
+				}
+			]
+		},
+		{
+			"case": "validation-5-wage",
+			"goal": "wage",
+			"mode": "goal_router",
+			"complete": true,
+			"steps": 3,
+			"minutes": 510,
+			"trace": [
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 90,
+						"clay": 10,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.7479329705238342,
+					"inferred_goal": "wage",
+					"ms": 77.0338339934824
+				},
+				{
+					"action": "rest:{\"time\": 30}",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 40,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.8688640594482422,
+					"inferred_goal": "wage",
+					"ms": 77.72604199999478
+				},
+				{
+					"action": "work",
+					"progress": true,
+					"state": {
+						"location": "farm",
+						"energy": 75,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.6086143255233765,
+					"inferred_goal": "wage",
+					"ms": 79.82441599597223
+				}
+			]
+		},
+		{
+			"case": "validation-6-pot",
+			"goal": "pot",
+			"mode": "goal_router",
+			"complete": true,
+			"steps": 7,
+			"minutes": 162,
+			"trace": [
+				{
+					"action": "rest:{\"time\": 30}",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 8,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9585710763931274,
+					"inferred_goal": "pot",
+					"ms": 77.82816699182149
+				},
+				{
+					"action": "walk_to_river_bank",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 75,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9709221124649048,
+					"inferred_goal": "pot",
+					"ms": 82.76908300467767
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 65,
+						"clay": 0,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9858188629150391,
+					"inferred_goal": "pot",
+					"ms": 89.63441700325347
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 55,
+						"clay": 10,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9073032140731812,
+					"inferred_goal": "pot",
+					"ms": 86.16795799753163
+				},
+				{
+					"action": "walk_to_square",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 45,
+						"clay": 20,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9248126149177551,
+					"inferred_goal": "pot",
+					"ms": 77.13995799713302
+				},
+				{
+					"action": "use_potter_wheel",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 35,
+						"clay": 20,
+						"pot": 0,
+						"money": 120
+					},
+					"confidence": 0.9927414655685425,
+					"inferred_goal": "pot",
+					"ms": 76.04441700095776
+				},
+				{
+					"action": "walk_to_home",
+					"progress": true,
+					"state": {
+						"location": "square",
+						"energy": 15,
+						"clay": 5,
+						"pot": 1,
+						"money": 120
+					},
+					"confidence": 0.9677615165710449,
+					"inferred_goal": "pot",
+					"ms": 79.1312080109492
+				}
+			]
+		},
+		{
+			"case": "validation-7-clay",
+			"goal": "clay",
+			"mode": "goal_router",
+			"complete": true,
+			"steps": 2,
+			"minutes": 33,
+			"trace": [
+				{
+					"action": "walk_to_river_bank",
+					"progress": true,
+					"state": {
+						"location": "tavern",
+						"energy": 43,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9645782113075256,
+					"inferred_goal": "clay",
+					"ms": 77.42125001095701
+				},
+				{
+					"action": "collect_clay",
+					"progress": true,
+					"state": {
+						"location": "river_bank",
+						"energy": 30,
+						"clay": 15,
+						"pot": 0,
+						"money": 80
+					},
+					"confidence": 0.9814764857292175,
+					"inferred_goal": "clay",
+					"ms": 87.26929199474398
+				}
+			]
+		}
+	],
+	"goal_audit": [
+		{
+			"text": "Marie broke her old clay pot. I promised to bring her a replacement at our house.",
+			"order": 0,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.8759088516235352,
+			"inferred_goal": "pot",
+			"ms": 85.19354200689122
+		},
+		{
+			"text": "Marie broke her old clay pot. I promised to bring her a replacement at our house.",
+			"order": 1,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9136325120925903,
+			"inferred_goal": "pot",
+			"ms": 77.47687501250766
+		},
+		{
+			"text": "Marie broke her old clay pot. I promised to bring her a replacement at our house.",
+			"order": 2,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9697152376174927,
+			"inferred_goal": "pot",
+			"ms": 77.41983399318997
+		},
+		{
+			"text": "My wife needs a new pot for cooking. I need to take one home to her.",
+			"order": 0,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9414276480674744,
+			"inferred_goal": "pot",
+			"ms": 77.02224999957252
+		},
+		{
+			"text": "My wife needs a new pot for cooking. I need to take one home to her.",
+			"order": 1,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.986522376537323,
+			"inferred_goal": "pot",
+			"ms": 77.05487500061281
+		},
+		{
+			"text": "My wife needs a new pot for cooking. I need to take one home to her.",
+			"order": 2,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9885397553443909,
+			"inferred_goal": "pot",
+			"ms": 77.47175000258721
+		},
+		{
+			"text": "The pottery is for Marie; I haven't brought it back to our house yet.",
+			"order": 0,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.8512887358665466,
+			"inferred_goal": "pot",
+			"ms": 77.2217079938855
+		},
+		{
+			"text": "The pottery is for Marie; I haven't brought it back to our house yet.",
+			"order": 1,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.897318422794342,
+			"inferred_goal": "pot",
+			"ms": 76.45791598770302
+		},
+		{
+			"text": "The pottery is for Marie; I haven't brought it back to our house yet.",
+			"order": 2,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9496154189109802,
+			"inferred_goal": "pot",
+			"ms": 77.78970799699891
+		},
+		{
+			"text": "John paid me already. The remaining promise today is a clay pot for Marie at home.",
+			"order": 0,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9128352403640747,
+			"inferred_goal": "pot",
+			"ms": 77.63875000819098
+		},
+		{
+			"text": "John paid me already. The remaining promise today is a clay pot for Marie at home.",
+			"order": 1,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9074729084968567,
+			"inferred_goal": "pot",
+			"ms": 77.15562501107343
+		},
+		{
+			"text": "John paid me already. The remaining promise today is a clay pot for Marie at home.",
+			"order": 2,
+			"expected_goal": "pot",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.972722053527832,
+			"inferred_goal": "pot",
+			"ms": 77.48354101204313
+		},
+		{
+			"text": "Tomorrow's pottery needs 20 clay. Stock up on the raw material today.",
+			"order": 0,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9720485806465149,
+			"inferred_goal": "clay",
+			"ms": 79.70287500938866
+		},
+		{
+			"text": "Tomorrow's pottery needs 20 clay. Stock up on the raw material today.",
+			"order": 1,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9807146191596985,
+			"inferred_goal": "clay",
+			"ms": 76.53683400712907
+		},
+		{
+			"text": "Tomorrow's pottery needs 20 clay. Stock up on the raw material today.",
+			"order": 2,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.7903299331665039,
+			"inferred_goal": "clay",
+			"ms": 77.88358299876563
+		},
+		{
+			"text": "I need to have at least twenty pieces of clay in my bag.",
+			"order": 0,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9161320328712463,
+			"inferred_goal": "clay",
+			"ms": 76.77633399725892
+		},
+		{
+			"text": "I need to have at least twenty pieces of clay in my bag.",
+			"order": 1,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9291027784347534,
+			"inferred_goal": "clay",
+			"ms": 76.93075000133831
+		},
+		{
+			"text": "I need to have at least twenty pieces of clay in my bag.",
+			"order": 2,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.7587008476257324,
+			"inferred_goal": "clay",
+			"ms": 76.32395799737424
+		},
+		{
+			"text": "Don't turn the clay into pots yet. Save 20 clay for tomorrow.",
+			"order": 0,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.8355079889297485,
+			"inferred_goal": "clay",
+			"ms": 76.93054199626204
+		},
+		{
+			"text": "Don't turn the clay into pots yet. Save 20 clay for tomorrow.",
+			"order": 1,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.8435747027397156,
+			"inferred_goal": "clay",
+			"ms": 76.76141599949915
+		},
+		{
+			"text": "Don't turn the clay into pots yet. Save 20 clay for tomorrow.",
+			"order": 2,
+			"expected_goal": "clay",
+			"correct_goal": false,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.533704936504364,
+			"inferred_goal": "pot",
+			"ms": 76.92766599939205
+		},
+		{
+			"text": "Today's job is gathering enough river clay to reach a stock of 20.",
+			"order": 0,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9395416378974915,
+			"inferred_goal": "clay",
+			"ms": 76.84700000390876
+		},
+		{
+			"text": "Today's job is gathering enough river clay to reach a stock of 20.",
+			"order": 1,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.9609079360961914,
+			"inferred_goal": "clay",
+			"ms": 76.88700000289828
+		},
+		{
+			"text": "Today's job is gathering enough river clay to reach a stock of 20.",
+			"order": 2,
+			"expected_goal": "clay",
+			"correct_goal": true,
+			"action": "collect_clay",
+			"progress": true,
+			"confidence": 0.8032116889953613,
+			"inferred_goal": "clay",
+			"ms": 77.72320900403429
+		},
+		{
+			"text": "I owe 160 copper in rent and need enough in my wallet to pay it.",
+			"order": 0,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.9178565740585327,
+			"inferred_goal": "wage",
+			"ms": 77.59079200332053
+		},
+		{
+			"text": "I owe 160 copper in rent and need enough in my wallet to pay it.",
+			"order": 1,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.9575826525688171,
+			"inferred_goal": "wage",
+			"ms": 77.06145799602382
+		},
+		{
+			"text": "I owe 160 copper in rent and need enough in my wallet to pay it.",
+			"order": 2,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.8007564544677734,
+			"inferred_goal": "wage",
+			"ms": 77.00987499265466
+		},
+		{
+			"text": "Build my savings to at least 160 copper by earning wages.",
+			"order": 0,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.979840099811554,
+			"inferred_goal": "wage",
+			"ms": 85.13733299332671
+		},
+		{
+			"text": "Build my savings to at least 160 copper by earning wages.",
+			"order": 1,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.9927819967269897,
+			"inferred_goal": "wage",
+			"ms": 76.52133400551975
+		},
+		{
+			"text": "Build my savings to at least 160 copper by earning wages.",
+			"order": 2,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.9658077359199524,
+			"inferred_goal": "wage",
+			"ms": 75.95962499908637
+		},
+		{
+			"text": "My only unfinished chore is getting my cash balance up to 160 copper.",
+			"order": 0,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.9577134251594543,
+			"inferred_goal": "wage",
+			"ms": 75.68754100066144
+		},
+		{
+			"text": "My only unfinished chore is getting my cash balance up to 160 copper.",
+			"order": 1,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.9899777173995972,
+			"inferred_goal": "wage",
+			"ms": 75.20154200028628
+		},
+		{
+			"text": "My only unfinished chore is getting my cash balance up to 160 copper.",
+			"order": 2,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.8843637108802795,
+			"inferred_goal": "wage",
+			"ms": 76.77054099622183
+		},
+		{
+			"text": "Skip pottery today. I must have 160 copper to cover a bill.",
+			"order": 0,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.9869585633277893,
+			"inferred_goal": "wage",
+			"ms": 76.43070799531415
+		},
+		{
+			"text": "Skip pottery today. I must have 160 copper to cover a bill.",
+			"order": 1,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.998518168926239,
+			"inferred_goal": "wage",
+			"ms": 75.35249998909421
+		},
+		{
+			"text": "Skip pottery today. I must have 160 copper to cover a bill.",
+			"order": 2,
+			"expected_goal": "wage",
+			"correct_goal": true,
+			"action": "walk_to_farm",
+			"progress": true,
+			"confidence": 0.9738122820854187,
+			"inferred_goal": "wage",
+			"ms": 76.5449579921551
+		},
+		{
+			"text": "My chores are done. Marie is waiting for me at our house.",
+			"order": 0,
+			"expected_goal": "home",
+			"correct_goal": false,
+			"action": "collect_clay",
+			"progress": false,
+			"confidence": 0.5030813813209534,
+			"inferred_goal": "pot",
+			"ms": 76.24508399749175
+		},
+		{
+			"text": "My chores are done. Marie is waiting for me at our house.",
+			"order": 1,
+			"expected_goal": "home",
+			"correct_goal": false,
+			"action": "collect_clay",
+			"progress": false,
+			"confidence": 0.6055119633674622,
+			"inferred_goal": "pot",
+			"ms": 75.09841700084507
+		},
+		{
+			"text": "My chores are done. Marie is waiting for me at our house.",
+			"order": 2,
+			"expected_goal": "home",
+			"correct_goal": false,
+			"action": "collect_clay",
+			"progress": false,
+			"confidence": 0.7733555436134338,
+			"inferred_goal": "pot",
+			"ms": 76.51929199346341
+		},
+		{
+			"text": "I am finished for today and need to get back to where I live.",
+			"order": 0,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.9496169090270996,
+			"inferred_goal": "home",
+			"ms": 87.06700000038836
+		},
+		{
+			"text": "I am finished for today and need to get back to where I live.",
+			"order": 1,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.834027886390686,
+			"inferred_goal": "home",
+			"ms": 76.49062499694992
+		},
+		{
+			"text": "I am finished for today and need to get back to where I live.",
+			"order": 2,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.7983408570289612,
+			"inferred_goal": "home",
+			"ms": 75.98258300276939
+		},
+		{
+			"text": "No more pottery or work. Return to my house.",
+			"order": 0,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.9094254970550537,
+			"inferred_goal": "home",
+			"ms": 79.39662499120459
+		},
+		{
+			"text": "No more pottery or work. Return to my house.",
+			"order": 1,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.795022189617157,
+			"inferred_goal": "home",
+			"ms": 75.5505830020411
+		},
+		{
+			"text": "No more pottery or work. Return to my house.",
+			"order": 2,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.8664925694465637,
+			"inferred_goal": "home",
+			"ms": 76.27275001141243
+		},
+		{
+			"text": "Marie asked me to come back home immediately.",
+			"order": 0,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.8058427572250366,
+			"inferred_goal": "home",
+			"ms": 78.39824999973644
+		},
+		{
+			"text": "Marie asked me to come back home immediately.",
+			"order": 1,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.6085115671157837,
+			"inferred_goal": "home",
+			"ms": 75.54216599965002
+		},
+		{
+			"text": "Marie asked me to come back home immediately.",
+			"order": 2,
+			"expected_goal": "home",
+			"correct_goal": true,
+			"action": "walk_to_home",
+			"progress": true,
+			"confidence": 0.5693007111549377,
+			"inferred_goal": "home",
+			"ms": 74.00929099821951
+		}
+	],
+	"model": {
+		"id": "fastino/GLiNER2.5-Decide",
+		"revision": "bbe10ff77ebb238777c17d3a8ac9260e30929057",
+		"weight_sha256": "40a5a23ff860dc3dff426cecd1048cacdd29c648c96db209dad818e9686dc997"
+	},
+	"date": "2026-10-01"
+}

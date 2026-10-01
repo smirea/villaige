@@ -85,3 +85,13 @@ For repeated tree decisions, start `scripts/decide --jsonl` and send one request
 The model loads once and emits one JSON result per request. Invalid requests return an `error` object; subsequent requests continue. `--labels` or `--schema` can supply a default schema for the stream.
 
 This classifier selects supplied labels; it cannot generate dialogue or arbitrary action arguments. The game engine still uses its existing LLM until its action and argument decisions are mapped to classification schemas.
+
+## Villager experiments
+
+The [experiment results](experiments/README.md) compare state formats, history, action outcomes, and a small planner using the current game's action costs. The strongest tested approach uses GLiNER to interpret the goal and code to plan the next action.
+
+```sh
+scripts/experiment-decisions --modes json history goal_router goal_only planner
+```
+
+Use `GLINER_MODEL` and the offline environment settings above to reuse the local checkpoint. Full predictions and multi-action traces are saved under `scripts/experiments/`.
