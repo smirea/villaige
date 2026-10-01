@@ -18,16 +18,47 @@ The [three-action example](examples/villager-actions.json) defines:
 | `walk`    | `to`: location string; `hurry`: boolean |
 | `consume` | `item`: burger, beer, or fries          |
 
-```sh
-scripts/decide 'I am exhausted. I want to rest for 30 minutes.' --schema scripts/examples/villager-actions.json
-# {"action": "rest", "args": {"time": 30}}
+Give the model the villager's state, history, goals, and world facts. The input does not specify which action to take. For example:
 
-scripts/decide 'I want to walk to the farm. I am late for work and must hurry.' --schema scripts/examples/villager-actions.json
-# {"action": "walk", "args": {"to": "farm", "hurry": true}}
-
-scripts/decide 'I am at the tavern and want to eat a burger.' --schema scripts/examples/villager-actions.json
-# {"action": "consume", "args": {"item": "burger"}}
+```text
+Villager: Bob, a farmer married to Marie.
+Goal: bring Marie a clay pot by evening.
+Current state: 11:00 AM, home, energy 95/100, hunger 0/100, inventory empty.
+History: finished today's farm work; Marie mentioned that her old pot broke.
+World: the river bank is the only source of clay; the square has a potter's wheel;
+a pot requires 15 clay. Marie returns home at 6:00 PM.
 ```
+
+Run the three [villager contexts](examples/villager-contexts.jsonl) using one persistent model:
+
+```sh
+scripts/decide --jsonl --schema scripts/examples/villager-actions.json < scripts/examples/villager-contexts.jsonl
+```
+
+`--schema` also accepts inline JSON when its first non-whitespace character is `{`:
+
+```sh
+scripts/decide 'Bob has energy 5/100 after carrying firewood. His goal is to finish farm work, which costs 50 energy.' \
+  --schema '{"action": ["rest", "work", "walk_to_farm"]}'
+```
+
+Inline JSON works for structured tool schemas too. To pass the three-action schema directly:
+
+```sh
+scripts/decide --jsonl --schema "$(cat scripts/examples/villager-actions.json)" < scripts/examples/villager-contexts.jsonl
+```
+
+The output is the model's proposed next action based on the context. These examples check its behavior; they do not establish that it can reliably plan a whole day.
+
+Observed locally with GLiNER2.5-Decide:
+
+| Context                                                   | Actual output                                          | Assessment                                  |
+| --------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------- |
+| Energy 5/100 after carrying firewood; unfinished goals    | `{"action":"walk","args":{"to":"home","hurry":false}}` | Poor decision: already home; needs recovery |
+| Energy 95/100; needs a pot; no clay; clay is at the river | `{"action":"walk","args":{"to":"home","hurry":true}}`  | Poor decision: does not advance the goal    |
+| At tavern; hunger 95/100; pot already made                | `{"action":"consume","args":{"item":"burger"}}`        | Sensible next action                        |
+
+Valid output shapes do not guarantee useful planning. The caller should restrict available actions and argument choices to those valid in the current world state.
 
 Supported JSON Schema shapes: a root `oneOf` or object, nested objects, `const`, `enum` (including numeric values), and booleans. Objects must set `additionalProperties: false` and mark every property as required. Free-form strings/numbers, arrays, and nested unions are unsupported; give arguments explicit choices. Descriptions help the model choose. This returns a proposed tool call; your application executes it.
 

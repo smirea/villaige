@@ -1,5 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"description": "Choose the villager's next action and its arguments from their current state, history, and goals. Prioritize urgent needs and make progress toward unfinished goals.",
 	"oneOf": [
 		{
 			"description": "Rest to recover energy when tired",

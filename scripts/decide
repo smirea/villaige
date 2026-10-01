@@ -57,7 +57,8 @@ def compile_json_schema(schema):
     labels = {}
     for index, variant in enumerate(variants):
         action = variant.get("properties", {}).get("action", {}).get("const")
-        labels[str(index)] = " ".join(str(value) for value in (
+        key = action if isinstance(action, str) and action not in labels else f"shape_{index}"
+        labels[key] = " ".join(str(value) for value in (
             action, variant.get("title"), variant.get("description"),
         ) if value) or json.dumps(variant)
     return compiled, labels, Draft202012Validator(schema)
@@ -67,10 +68,10 @@ def main():
     from jsonschema.exceptions import SchemaError, ValidationError
 
     parser = argparse.ArgumentParser(description="Classify decisions locally with GLiNER2.5-Decide.")
-    parser.add_argument("text", nargs="?", help="Input text; omit to read stdin")
+    parser.add_argument("text", nargs="?", help="Context to decide from (state, history, goals); omit to read stdin")
     schema_args = parser.add_mutually_exclusive_group()
     schema_args.add_argument("--labels", nargs="+", help="Candidate labels for one decision")
-    schema_args.add_argument("--schema", type=Path, help="JSON Schema for structured output, or a GLiNER classification schema")
+    schema_args.add_argument("--schema", help="Schema file path, or inline JSON starting with '{'")
     parser.add_argument("--task", default="action")
     parser.add_argument("--jsonl", action="store_true", help='Keep the model loaded; read {"text": ..., "schema": ...} per line')
     parser.add_argument("--model", default=os.environ.get("GLINER_MODEL", "fastino/GLiNER2.5-Decide"), help="Model directory or Hugging Face ID (also GLINER_MODEL)")
@@ -95,7 +96,7 @@ def main():
             if any(not isinstance(label, str) or not label.strip() for label in labels):
                 raise ValueError(f"{name}: labels must be nonempty strings")
 
-    schema = json.loads(args.schema.read_text()) if args.schema else ({args.task: args.labels} if args.labels else None)
+    schema = json.loads(args.schema if args.schema.lstrip().startswith("{") else Path(args.schema).read_text()) if args.schema else ({args.task: args.labels} if args.labels else None)
     text = args.text if args.text is not None else (None if args.jsonl else sys.stdin.read())
     if not args.jsonl:
         validate(text, schema)
@@ -116,9 +117,12 @@ def main():
         with redirect_stdout(sys.stderr), torch.inference_mode():
             if structured:
                 compiled, labels, validator = structured
-                index = int(model.classify_text(text, {"action": {"labels": labels}})["action"]) if len(compiled) > 1 else 0
+                context = f"{schema.get('description', '')}\n\n{text}".strip()
+                choice = model.classify_text(context, {"action": {"labels": labels}})["action"] if len(compiled) > 1 else next(iter(labels))
+                index = list(labels).index(choice)
                 build, tasks = compiled[index]
-                answers = model.classify_text(text, tasks, include_confidence=True) if tasks else {}
+                argument_context = f"{context}\n\nSelected action: {labels[choice]}. Choose arguments for this action."
+                answers = model.classify_text(argument_context, tasks, include_confidence=True) if tasks else {}
                 result = build(answers)
                 validator.validate(result)
             else:
